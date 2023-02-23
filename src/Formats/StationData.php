@@ -21,4 +21,6 @@ class StationData
     public int $panel_count = 0;
 
     public int $watt_peak = 0;
+
+    public string $date_commissioning;
 }

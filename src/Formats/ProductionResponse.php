@@ -8,6 +8,8 @@ class ProductionResponse
 
     public DayData $dayData;
 
+    public CurrentData $currentData;
+
     public ProductionData $dayProduction;
 
     public ProductionData $monthProduction;

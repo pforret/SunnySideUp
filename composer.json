@@ -3,6 +3,8 @@
     "description": "Solar monitoring site data retrieval",
     "keywords": [
         "pforret",
+        "php",
+        "solar",
         "sunnysideup"
     ],
     "homepage": "https://github.com/pforret/sunnysideup",
@@ -34,13 +36,12 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit --testdox",
-            "test-coverage": "vendor/bin/phpunit --coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage",
         "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-
             "phpstan/extension-installer": true
         }
     },

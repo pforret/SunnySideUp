@@ -9,4 +9,6 @@ class CurrentData
     public float $currentTemperature;
 
     public float $currentPrecipitation;
+
+    public string $timeSampled;
 }

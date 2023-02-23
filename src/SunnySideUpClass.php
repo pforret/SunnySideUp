@@ -2,6 +2,8 @@
 
 namespace Pforret\SunnySideUp;
 
+use Pforret\SunnySideUp\Exceptions\InvalidContentError;
+use Pforret\SunnySideUp\Exceptions\InvalidUrlError;
 use Pforret\SunnySideUp\Exceptions\UnknownSiteError;
 use Pforret\SunnySideUp\Formats\ProductionResponse;
 use Pforret\SunnySideUp\Sources\FakeSource;
@@ -14,6 +16,8 @@ class SunnySideUpClass
     private SourceInterface $source;
 
     /**
+     * @throws InvalidContentError
+     * @throws InvalidUrlError
      * @throws UnknownSiteError
      */
     public static function get(string $url): ProductionResponse

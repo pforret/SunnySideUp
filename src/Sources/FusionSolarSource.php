@@ -2,7 +2,9 @@
 
 namespace Pforret\SunnySideUp\Sources;
 
+use Pforret\SunnySideUp\Exceptions\InvalidContentError;
 use Pforret\SunnySideUp\Exceptions\InvalidUrlError;
+use Pforret\SunnySideUp\Formats\CurrentData;
 use Pforret\SunnySideUp\Formats\DayData;
 use Pforret\SunnySideUp\Formats\ProductionData;
 use Pforret\SunnySideUp\Formats\ProductionResponse;
@@ -14,6 +16,7 @@ class FusionSolarSource implements SourceInterface
 
     /**
      * @throws InvalidUrlError
+     * @throws InvalidContentError
      */
     public function get(string $url): ProductionResponse
     {
@@ -24,6 +27,9 @@ class FusionSolarSource implements SourceInterface
         $html = $this->getUrl($url, $referer);
         $json = json_decode($html, true);
         $data = json_decode(htmlspecialchars_decode($json['data'] ?? ''), true);
+        if (! isset($data['stationOverview'])) {
+            throw new InvalidContentError();
+        }
         $response = new ProductionResponse();
         $response->stationData = new StationData();
         $response->stationData->url = $url;
@@ -32,6 +38,8 @@ class FusionSolarSource implements SourceInterface
         $response->stationData->name = $data['stationOverview']['stationName'] ?? '';
 
         $response->dayData = new DayData();
+
+        $response->currentData = new CurrentData();
 
         $response->dayProduction = new ProductionData();
         $response->dayProduction->kwhSystem = $data['realKpi']['dailyEnergy'] ?? null;
@@ -57,7 +65,7 @@ class FusionSolarSource implements SourceInterface
         if (! str_contains($url, 'kk=')) {
             throw new InvalidUrlError();
         }
-        preg_match("|kk=(\w+)$|", $url, $params);
+        preg_match('|kk=([^&]+)|', $url, $params);
 
         return $params[1] ?? '';
     }
