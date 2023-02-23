@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class SunnySideUpClassTest extends TestCase
 {
-
     /**
      * @throws UnknownSiteError
      */
@@ -16,7 +15,7 @@ class SunnySideUpClassTest extends TestCase
     {
         $sunny = new SunnySideUpClass();
         $this->expectException(UnknownSiteError::class);
-        $response = $sunny::get("https://www.nonsense.com");
+        $response = $sunny::get('https://www.nonsense.com');
     }
 
     /**
@@ -25,7 +24,7 @@ class SunnySideUpClassTest extends TestCase
     public function testGetFake()
     {
         $sunny = new SunnySideUpClass();
-        $response = $sunny::get("https://www.example.com");
+        $response = $sunny::get('https://www.example.com');
         $this->assertNotEmpty($response);
         $this->assertNotEmpty($response->totalProduction);
     }
@@ -36,8 +35,8 @@ class SunnySideUpClassTest extends TestCase
     public function testGetFusionSolar()
     {
         $sunny = new SunnySideUpClass();
-        $response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html#/kiosk?kk=fo0x7vgtd9Noeqj9FHx2ofD0fPvAyj9b");
-        print_r($response);
+        $response = $sunny::get('https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html#/kiosk?kk=fo0x7vgtd9Noeqj9FHx2ofD0fPvAyj9b');
+        //print_r($response);
         $this->assertNotEmpty($response);
 
         $this->assertNotEmpty($response->stationData);
@@ -50,16 +49,18 @@ class SunnySideUpClassTest extends TestCase
     public function testTopDomainSunnyPortal()
     {
         $sunny = new SunnySideUpClass();
-        $this->assertEquals("sunnyportal.com",$sunny::topDomain("https://www.sunnyportal.com/Templates/PublicPageOverview.aspx"));
+        $this->assertEquals('sunnyportal.com', $sunny::topDomain('https://www.sunnyportal.com/Templates/PublicPageOverview.aspx'));
     }
+
     public function testTopDomainFusionSolar()
     {
         $sunny = new SunnySideUpClass();
-        $this->assertEquals("fusionsolar.huawei.com",$sunny::topDomain("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html"));
+        $this->assertEquals('fusionsolar.huawei.com', $sunny::topDomain('https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html'));
     }
+
     public function testTopDomainFakeSource()
     {
         $sunny = new SunnySideUpClass();
-        $this->assertEquals("example.com",$sunny::topDomain("https://www.example.com"));
+        $this->assertEquals('example.com', $sunny::topDomain('https://www.example.com'));
     }
 }

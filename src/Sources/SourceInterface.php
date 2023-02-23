@@ -6,7 +6,5 @@ use Pforret\SunnySideUp\Formats\ProductionResponse;
 
 interface SourceInterface
 {
-
     public function get(string $url): ProductionResponse;
-
 }

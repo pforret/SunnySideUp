@@ -19,31 +19,31 @@ class FusionSolarSource implements SourceInterface
     {
         $hostname = parse_url($url, PHP_URL_HOST);
         $key = self::getKey($url);
-        $url = sprintf("https://%s/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=%s", $hostname, $key);
-        $referer = sprintf("https://%s/pvmswebsite/nologin/assets/build/index.html", $hostname);
+        $url = sprintf('https://%s/rest/pvms/web/kiosk/v1/station-kiosk-file?kk=%s', $hostname, $key);
+        $referer = sprintf('https://%s/pvmswebsite/nologin/assets/build/index.html', $hostname);
         $html = $this->getUrl($url, $referer);
         $json = json_decode($html, true);
-        $data = json_decode(htmlspecialchars_decode($json["data"] ?? ""), true);
+        $data = json_decode(htmlspecialchars_decode($json['data'] ?? ''), true);
         $response = new ProductionResponse();
         $response->stationData = new StationData();
         $response->stationData->url = $url;
-        $response->stationData->id = $data["stationOverview"]["stationDn"] ?? "";
-        $response->stationData->address = $data["stationOverview"]["plantAddress"] ?? "";
-        $response->stationData->name = $data["stationOverview"]["stationName"] ?? "";
+        $response->stationData->id = $data['stationOverview']['stationDn'] ?? '';
+        $response->stationData->address = $data['stationOverview']['plantAddress'] ?? '';
+        $response->stationData->name = $data['stationOverview']['stationName'] ?? '';
 
         $response->dayData = new DayData();
 
         $response->dayProduction = new ProductionData();
-        $response->dayProduction->kwhSystem = $data["realKpi"]["dailyEnergy"] ?? null;
+        $response->dayProduction->kwhSystem = $data['realKpi']['dailyEnergy'] ?? null;
 
         $response->monthProduction = new ProductionData();
-        $response->monthProduction->kwhSystem = $data["realKpi"]["monthEnergy"] ?? null;
+        $response->monthProduction->kwhSystem = $data['realKpi']['monthEnergy'] ?? null;
 
         $response->yearProduction = new ProductionData();
-        $response->yearProduction->kwhSystem = $data["realKpi"]["yearEnergy"] ?? null;
+        $response->yearProduction->kwhSystem = $data['realKpi']['yearEnergy'] ?? null;
 
         $response->totalProduction = new ProductionData();
-        $response->totalProduction->kwhSystem = $data["realKpi"]["cumulativeEnergy"] ?? null;
+        $response->totalProduction->kwhSystem = $data['realKpi']['cumulativeEnergy'] ?? null;
 
         return $response;
     }
@@ -51,13 +51,14 @@ class FusionSolarSource implements SourceInterface
     /**
      * @throws InvalidUrlError
      */
-    static function getKey(string $url)
+    public static function getKey(string $url)
     {
         $params = [];
-        if (!str_contains($url, "kk=")) {
+        if (! str_contains($url, 'kk=')) {
             throw new InvalidUrlError();
         }
         preg_match("|kk=(\w+)$|", $url, $params);
-        return $params[1] ?? "";
+
+        return $params[1] ?? '';
     }
 }

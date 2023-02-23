@@ -5,8 +5,8 @@ namespace Pforret\SunnySideUp;
 use Pforret\SunnySideUp\Exceptions\UnknownSiteError;
 use Pforret\SunnySideUp\Formats\ProductionResponse;
 use Pforret\SunnySideUp\Sources\FakeSource;
-use Pforret\SunnySideUp\Sources\SourceInterface;
 use Pforret\SunnySideUp\Sources\FusionSolarSource;
+use Pforret\SunnySideUp\Sources\SourceInterface;
 use Pforret\SunnySideUp\Sources\SunnyPortalSource;
 
 class SunnySideUpClass
@@ -16,27 +16,31 @@ class SunnySideUpClass
     /**
      * @throws UnknownSiteError
      */
-    static function get(string $url): ProductionResponse
+    public static function get(string $url): ProductionResponse
     {
         $domain = self::topDomain($url);
         $source = match ($domain) {
-            "example.com" => new FakeSource(),
-            "sunnyportal.com" => new SunnyPortalSource(),
-            "fusionsolar.huawei.com" => new FusionSolarSource(),
+            'example.com' => new FakeSource(),
+            'sunnyportal.com' => new SunnyPortalSource(),
+            'fusionsolar.huawei.com' => new FusionSolarSource(),
             default => null,
         };
-        if(!$source){
+        if (! $source) {
             throw new UnknownSiteError();
         }
+
         return $source->get($url);
     }
 
-    static function topDomain(string $url): string
+    public static function topDomain(string $url): string
     {
-        $domain = parse_url($url,PHP_URL_HOST);
-        $domain =str_replace("www.","",$domain);
-        $parts = explode(".",$domain);
-        if(count($parts) <= 3) return $domain;
-        return implode(".",array_slice($parts,-3));
+        $domain = parse_url($url, PHP_URL_HOST);
+        $domain = str_replace('www.', '', $domain);
+        $parts = explode('.', $domain);
+        if (count($parts) <= 3) {
+            return $domain;
+        }
+
+        return implode('.', array_slice($parts, -3));
     }
 }

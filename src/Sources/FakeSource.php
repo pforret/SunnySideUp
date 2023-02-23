@@ -9,7 +9,6 @@ use Pforret\SunnySideUp\Formats\StationData;
 
 class FakeSource implements SourceInterface
 {
-
     public function get(string $url): ProductionResponse
     {
         $response = new ProductionResponse();
@@ -19,6 +18,7 @@ class FakeSource implements SourceInterface
         $response->yearProduction = new ProductionData();
         $response->totalProduction = new ProductionData();
         $response->stationData = new StationData();
+
         return $response;
     }
 }
