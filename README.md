@@ -6,6 +6,10 @@
 
 ![](assets/unsplash.sunny.jpg)
 
+works for
+* [x] FusionSolar (Huawei) - Kiosk URL
+* [ ] SunnyPortal (SMA Solar)
+* ...
 
 ## Installation
 
@@ -18,8 +22,8 @@ composer require pforret/sunnysideup
 ## Usage
 
 ```php
-$skeleton = new Pforret\SunnySideUp();
-echo $skeleton->echoPhrase('Hello, Pforret!');
+$sunny = new SunnySideUpClass();
+$response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html#/kiosk?kk=$id");
 ```
 
 ## Testing
