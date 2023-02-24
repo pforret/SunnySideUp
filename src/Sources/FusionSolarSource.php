@@ -5,10 +5,11 @@ namespace Pforret\SunnySideUp\Sources;
 use Pforret\SunnySideUp\Exceptions\InvalidContentError;
 use Pforret\SunnySideUp\Exceptions\InvalidUrlError;
 use Pforret\SunnySideUp\Formats\CurrentData;
-use Pforret\SunnySideUp\Formats\DayData;
+use Pforret\SunnySideUp\Formats\DayWeather;
 use Pforret\SunnySideUp\Formats\ProductionData;
 use Pforret\SunnySideUp\Formats\ProductionResponse;
 use Pforret\SunnySideUp\Formats\StationData;
+use Pforret\SunnySideUp\Helpers\UrlGrabber;
 
 class FusionSolarSource implements SourceInterface
 {
@@ -30,6 +31,66 @@ class FusionSolarSource implements SourceInterface
         if (! isset($data['stationOverview'])) {
             throw new InvalidContentError();
         }
+        // print_r($data);
+        /*
+        Array
+        (
+            [powerCurve] => Array
+                (
+                    [xAxis] => Array
+                        (
+                            [0] => 00:00
+                            [1] => 00:05
+                            // ...
+                            [286] => 23:50
+                            [287] => 23:55
+                        )
+
+                    [currentPower] => 0.48
+                    [activePower] => Array
+                        (
+                            [0] => 0.00
+                            [1] => 0.00
+                            // ...
+                            [125] => 2.86
+                            [126] => 3.32
+                            // ...
+                            [286] => -
+                            [287] => -
+                        )
+
+                )
+
+            [stationOverview] => Array
+                (
+                    [stationName] => (station name)
+                    [plantAddress] => (street address)
+                    [stationDn] => (station id))
+                )
+
+            [language] => en-US
+            [socialContribution] => Array
+                (
+                    [co2ReductionByYear] => 55.8
+                    [equivalentTreePlantingByYear] => 1
+                    [standardCoalSavings] => 69.14
+                    [cumulativeReductionDust] => 46.95
+                    [equivalentTreePlanting] => 1
+                    [co2Reduction] => 82.1
+                    [standardCoalSavingsByYear] => 46.99
+                )
+
+            [realKpi] => Array
+                (
+                    [realTimePower] => 2.86
+                    [cumulativeEnergy] => 172.85
+                    [monthEnergy] => 86.21
+                    [dailyEnergy] => 0.87
+                    [yearEnergy] => 117.47
+                )
+
+        )
+         */
         $response = new ProductionResponse();
         $response->stationData = new StationData();
         $response->stationData->url = $url;
@@ -37,9 +98,10 @@ class FusionSolarSource implements SourceInterface
         $response->stationData->address = $data['stationOverview']['plantAddress'] ?? '';
         $response->stationData->name = $data['stationOverview']['stationName'] ?? '';
 
-        $response->dayData = new DayData();
+        $response->dayWeather = new DayWeather();
 
         $response->currentData = new CurrentData();
+        $response->currentData->currentPowerKw = $data['powerCurve']['currentPower'] ?? '';
 
         $response->dayProduction = new ProductionData();
         $response->dayProduction->kwhSystem = $data['realKpi']['dailyEnergy'] ?? null;

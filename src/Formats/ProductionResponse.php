@@ -6,7 +6,7 @@ class ProductionResponse
 {
     public StationData $stationData;
 
-    public DayData $dayData;
+    public DayWeather $dayWeather;
 
     public CurrentData $currentData;
 

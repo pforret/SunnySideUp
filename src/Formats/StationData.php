@@ -6,21 +6,21 @@ class StationData
 {
     public string $url = '';
 
-    public string $name = '';
+    public ?string $name = null;
 
-    public string $id;
+    public ?string $id = null;
 
-    public string $address = '';
+    public ?string $address = null;
 
-    public string $city = '';
+    public ?string $city = null;
 
-    public string $country = '';
+    public ?string $country = null;
 
-    public string $timezone = 'UTC';
+    public ?string $timezone = null;
 
-    public int $panel_count = 0;
+    public ?int $panel_count = null;
 
-    public int $watt_peak = 0;
+    public ?int $watt_peak = null;
 
-    public string $date_commissioning;
+    public ?string $date_commissioning = null;
 }

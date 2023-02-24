@@ -3,10 +3,11 @@
 namespace Pforret\SunnySideUp\Sources;
 
 use Pforret\SunnySideUp\Formats\CurrentData;
-use Pforret\SunnySideUp\Formats\DayData;
+use Pforret\SunnySideUp\Formats\DayWeather;
 use Pforret\SunnySideUp\Formats\ProductionData;
 use Pforret\SunnySideUp\Formats\ProductionResponse;
 use Pforret\SunnySideUp\Formats\StationData;
+use Pforret\SunnySideUp\Helpers\UrlGrabber;
 
 class SunnyPortalSource implements SourceInterface
 {
@@ -30,9 +31,6 @@ class SunnyPortalSource implements SourceInterface
 
         $response->stationData = new StationData();
         $response->stationData->url = $url;
-//        $response->stationData->id = $data['stationOverview']['stationDn'] ?? '';
-//        $response->stationData->address = $data['stationOverview']['plantAddress'] ?? '';
-//        $response->stationData->name = $data['stationOverview']['stationName'] ?? '';
         $response->stationData->timezone = self::parseRegexFromHtml($html, "|standardName: '([^']+)'|");
         $response->stationData->watt_peak = self::parseRegexFromHtml($html, "|<div><strong>(\d+) Wp</strong></div>|");
         $response->stationData->date_commissioning = self::parseRegexFromHtml($html, "|<div><strong>(\d+/\d/\d+)</strong></div>|");
@@ -41,16 +39,25 @@ class SunnyPortalSource implements SourceInterface
         $response->currentData->currentPowerKw = (float) self::parseRegexFromHtml($html, '|data-value="(\d+)"|');
         $response->currentData->timeSampled = self::parseRegexFromHtml($html, '|data-timestamp="([^"]+)"|');
 
-        $response->dayData = new DayData();
+        $response->dayWeather = new DayWeather();
 
         $response->dayProduction = new ProductionData();
         $response->dayProduction->kwhSystem = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldValue');
         $unit = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldUnit');
-        if ($unit == 'Wh') {
+        if ($unit == 'Wh' && $response->dayProduction->kwhSystem > 0) {
             // convert to kWh
             $response->dayProduction->kwhSystem = $response->dayProduction->kwhSystem / 1000;
         }
-        $response->dayProduction->equivalentKgCo2 = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionValue');
+        $dailyCO2 = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionValue');
+        $co2_unit = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionUnit');
+        if ($dailyCO2 > 0) {
+            if ($co2_unit == 'g') {
+                // convert to kg
+                $response->dayProduction->equivalentKgCo2 = $dailyCO2 / 1000;
+            } else {
+                $response->dayProduction->equivalentKgCo2 = $dailyCO2;
+            }
+        }
 
         $response->monthProduction = new ProductionData();
 //        $response->monthProduction->kwhSystem = $data['realKpi']['monthEnergy'] ?? null;
@@ -61,7 +68,7 @@ class SunnyPortalSource implements SourceInterface
         $response->totalProduction = new ProductionData();
         $response->totalProduction->kwhSystem = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldTotalValue');
         $unit = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldTotalUnit');
-        if ($unit == 'MWh') {
+        if ($unit == 'MWh' && $response->totalProduction->kwhSystem > 0) {
             // convert to kWh
             $response->totalProduction->kwhSystem = $response->totalProduction->kwhSystem * 1000;
         }

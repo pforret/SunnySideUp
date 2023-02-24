@@ -6,11 +6,9 @@ class ProductionData
 {
     public ?float $kwhSystem = null;
 
-    public ?float $kwhPanel = null;
+    public ?float $equivalentTrees = null;
 
-    public float $equivalentTrees;
+    public ?float $equivalentKgCoal = null;
 
-    public float $equivalentKgCoal;
-
-    public float $equivalentKgCo2;
+    public ?float $equivalentKgCo2 = null;
 }

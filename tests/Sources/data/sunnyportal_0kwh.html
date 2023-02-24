@@ -1,0 +1,2032 @@
+
+
+<!DOCTYPE html>
+
+<!--[if IE 8]><html class="ie8 oldie"><![endif]-->
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html><!--<![endif]-->
+    <head id="ctl00_Head">
+        <!-- OneTrust Cookie-Einwilligungshinweis – Anfang für www.sunnyportal.com -->
+        <script type="text/javascript" src="https://cdn.cookielaw.org/consent/9b0fa120-418b-4cda-bfed-b1e439ad6f96-test/OtAutoBlock.js" ></script>
+        <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="9b0fa120-418b-4cda-bfed-b1e439ad6f96-test" ></script>
+        <script type="text/javascript">
+            function OptanonWrapper() { }
+        </script>
+        <!-- OneTrust-Cookie-Einwilligungshinweis – Ende für www.sunnyportal.com -->
+        <meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	José Manuel Corrales PV System Overview
+</title><link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" /><link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="stylesheet" href="/dist/css/sma.theme.css?v=8.11.0.77"/>
+
+    <link rel="stylesheet" href="/dist/css/sma.webforms.css?v=8.11.0.77"/>
+
+
+<!--[if IE ]>
+<link rel="stylesheet" type="text/css" href="/Content/themes/redesign/webforms.ie.css" />
+<![endif]-->
+
+    <link rel="stylesheet" href="/dist/css/sma.modules.css?v=8.11.0.77"/>
+
+
+
+
+<script src="/Scripts/require.js?v=8.11.0.77"></script>
+<script src="/Scripts/requirejs-config.js?v=8.11.0.77"></script>
+<script>
+    requirejs.config({ urlArgs: 'v=8.11.0.77' });
+    (function (global, name, factory) {
+        global.SMA = global.SMA || {};
+        global.SMA[name] = factory();
+    }(this, 'version', function () {
+        return '8.11.0.77';
+    }));
+</script>
+
+<script src="/Translation/culture.en-US.js?v=8.11.0.77"></script>
+<script>
+    (function (global, name, factory) {
+        global.SMA = global.SMA || {};
+        global.SMA[name] = factory();
+    }(window || this, 'timezone', function () {
+        return {
+            standardName: 'Romance Standard Time'
+        };
+    }));
+</script>
+<script>
+    (function (global, name, factory) {
+        global.SMA = global.SMA || {};
+        global.SMA[name] = factory();
+    }(window || this, 'translation', function () {
+        require(['sma-translation'], function (Translation) {
+
+                Translation.add('dataTables', {
+
+                    'Pagination_FirstPage': 'First page',
+
+                    'Pagination_LastPage': 'Last page',
+
+                    'Pagination_NextPage': 'Next page',
+
+                    'Pagination_PrevPage': 'Previous page',
+
+                    'NoData': 'No data',
+
+                    'ASA_UserPlantList_Datatable_sInfo': '_START_ to _END_ of _TOTAL_ entries',
+
+                    'ASA_UserPlantList_Datatable_sInfoFiltered': ' (filtered from a total of _MAX_ entries)',
+
+                    'ASA_UserPlantList_Datatable_sLengthMenu': 'Show _MENU_ entries',
+
+                    'Mode_loading': 'Loading...',
+
+                    'search': 'Search',
+
+                    'ASA_UserPlantList_Datatable_plugins_ColVis_buttonText': 'Hide/show columns',
+
+                    'sort_descending_title': 'Sort in descending order',
+
+                    'sort_ascending_title': 'Sort in ascending order',
+
+                    'ShowHideColumns': 'Hide / show columns',
+
+                });
+
+                Translation.add('datePicker', {
+
+                    'closeText': 'Close',
+
+                    'prevText': 'Back',
+
+                    'nextText': 'Next',
+
+                    'currentText': 'Today',
+
+                    'yearSuffix': 'Year',
+
+                });
+
+                Translation.add('colorPicker', {
+
+                    'cancelText': 'Cancel',
+
+                    'chooseText': 'Select',
+
+                    'clearText': 'Clear color selection',
+
+                    'noColorSelectedText': 'No color selected',
+
+                    'togglePaletteMoreText': 'More',
+
+                    'togglePaletteLessText': 'Less',
+
+                });
+
+                Translation.add('intro', {
+
+                    'nextLabel': 'Next',
+
+                    'prevLabel': 'Back',
+
+                    'skipLabel': 'Close',
+
+                    'doneLabel': 'Close',
+
+                    'IntroNewFeature': 'New function',
+
+                    'IntroTryItOut': 'Try it out!',
+
+                    'IntroShopButton': 'You can see the access to the new SMA Online Store here. With this you have the option of purchasing fee-based add-ons for your Sunny Portal systems.',
+
+                    'IntroProfessionalPackage': 'Begin with the Sunny Portal Professional Package and raise monitoring with Sunny Portal to the next level. With the free-of-charge Demo Package you will receive full access to the new functions for four weeks. Further information is available at {{{link}}}.',
+
+                    'IntroShopName': 'SMA Online Store',
+
+                    'IntroPlantLogTitle': 'Update',
+
+                    'IntroPlantLogText': 'We have optimized the mode of operation of the <strong>PV system logbook</strong>.<br>From now on you will see all messages on one page.<br>Confirming events will therefore be significantly simpler.',
+
+                });
+
+                Translation.add('areYouSure', {
+
+                    'message': 'You have unsaved changes.',
+
+                    'NotSupportedBrowser': 'This function is unfortunately not currently available for the web browser {0}. Please use an alternative web browser.',
+
+                });
+
+                Translation.add('validation', {
+
+                    'error_required': 'The field "{0}" is required.',
+
+                    'error_string_max_length': 'The field "{0}" may contain a maximum of {1} characters.',
+
+                    'error_invalid_company_tax_id': 'The entry in the field "Company VAT number" is invalid.',
+
+                    'validation_number': 'Enter a valid number.',
+
+                });
+
+        });
+    }));
+</script>
+
+<script>
+    (function (global, name, factory) {
+        global.SMA = global.SMA || {};
+        global.SMA[name] = factory();
+    }(window || this, 'user', function () {
+        return {
+            checkoutid:  '21195739-3efb-4f2f-8fd7-d5af8eb4b6d7',
+            userid:     '00000000-0000-0000-0000-000000000000'
+        };
+    }));
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NHCRX49');</script>
+<!-- End Google Tag Manager -->
+
+
+    <script src="/dist/js/sma.scripts.min.js?v=8.11.0.77"></script>
+    <script src="/dist/js/sma.webmodules.min.js?v=8.11.0.77"></script>
+    <script src="/dist/js/sma.sp.min.js?v=8.11.0.77"></script>
+
+
+<script>
+    require(['sp-init-main'], function (sp) {
+        sp.init();
+    });
+</script>
+<link rel="stylesheet" type="text/css" href="/Content/Dashboard/widgets.min.css?v=8.11.0.77"></link><link rel="stylesheet" type="text/css" href="/Tools/css/shadowbox/shadowbox.css?v=1"></link><link rel="stylesheet" type="text/css" href="/Tools/css/shadowbox/MessageWindow.css?v=8.11.0.77"></link><meta http-equiv="expires" content="-1"></meta><meta http-equiv="cache-control" content="no-cache"></meta><meta http-equiv="Pragma" content="no-cache"></meta><link href="/WebResource.axd?d=TnITjDOOgEqATduYERDSCaZYCtf_gJSzVvQfx6OWUMbWQGaZt4pZ1fzdZlJEBeH5zWpu4v8Ydi9ud2bxg-XQlvd8CNx0w7COPDetZLDkMJZzuYvF-mmqf0CCRdnW7OuZWcfRtw2&amp;t=638118827140000000" rel="stylesheet" type="text/css" /></head>
+    <body id="ctl00_theBody" class="navi229" onscroll="javascript:onSunnyPortalPageScroll();" data-lang="en-US">
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHCRX49"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        <div id="DivOpac50BG" style="z-Index:9999;"></div>
+
+        <form method="post" action="./PublicPageOverview.aspx?page=3e371bac-b19a-4257-853c-aac4d3601c0b&amp;plant=46e9985f-128a-4da8-a70d-e95f72085ca4&amp;splang=en-US" id="aspnetForm" class="hasgrid">
+<input type="hidden" name="__ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_diagram_VIEWSTATE" id="__ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_diagram_VIEWSTATE" value="CFV0224_0919340D720.chs" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/Tools/js/shadowbox/MessageWindow.js?v=1" type="text/javascript"></script>
+<script src="/Tools/js/shadowbox/shadowbox.js?v=1" type="text/javascript"></script><script type="text/javascript">
+ <!--
+function onSunnyPortalPageScroll() {
+   var scrollElem = document.getElementById('ctl00__scrollPosHidden');   if (scrollElem == null) return;   scrollElem.value = document.documentElement.scrollTop; }
+// -->
+</script>
+<script type="text/javascript">
+<!--
+document.onkeypress = function onKeyPress(e) {
+   if (e.which == 13) {
+	if (!isMultiLineTextElement(e.target) && !isAnchor(e.target)) {
+		e.cancelBubble = true;
+		e.returnValue = false;
+	}
+	}
+}
+	function isMultiLineTextElement(elem) {
+		return (elem.tagName == "TEXTAREA");}
+	function isAnchor(elem) {
+		return (elem.tagName == "A");}
+// -->
+</script>
+
+<script src="/WebResource.axd?d=Gq6ENWLlTYW4hP-uniblapdyTTAgoMKceAOr5gsBnUQ0E0Yb4zYfLDQU5y-kQjYIFXt1_L3m46_dv5_Dw8p_h7Xyh6BKiVG5iQMXce2I8MdOlbg-oi-8XNoOxXMfl4tWs1cCTw2&amp;t=638118827140000000" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function SFX_Callback (chartId, clickId) {
+WebForm_DoCallback(chartId,clickId,SFX_OnCallbackReady,chartId,SFX_OnCallbackError,true);
+}
+function SFX_PostBack (chartId, clickId) {
+__doPostBack(chartId,clickId);
+}
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yPpv5khyEd4V7mS5DoHJhk8O-ETaUnkYhxuBCZzypSOnmhYrCe9PWYJ13v8Qp24AolsWkuMuFwTwjbs70JW7Bx827TE-ALP-MDSf7oEmYAbXBbca1DQAcyz88MHmKxbukDP21I81&amp;t=2fe674eb" type="text/javascript"></script><script type="text/javascript"><!--
+var ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePickerParams = {enabled:true,autoPostBack:true,selectableWeekDays:true,selectableWeekendDays:true,selectablePrevMonthDays:true,selectableNextMonthDays:true,maximumDate:new Date(2023,1,24,0,0,0),minimumDate:new Date(2017,0,24,0,0,0),twoDigitYearBreak:50,openCalendarOnTextBoxFocus:false,monthSelectorEnabled:true,yearSelectorEnabled:true,titleFormat:"MMMM yyyy",rows:1,columns:1,dayStatusBarText:"{0}",nullDateText:"",xOffset:0,yOffset:-2,nextPrevMonthImageWidth:"18px",nextPrevMonthImageHeight:"16px",nextMonthText:"&gt;",prevMonthText:"&lt;",showWeekNumbers:false,showDaysInNextMonth:true,showDaysInPrevMonth:true,showTodayButton:false,todayButtonText:"Today",showNoneButton:false,noneButtonText:"None",footNoteText:"",forceSixRows:true,firstDayOfWeek:7,dayNameFormat:"FirstTwoLetters",displayType:"TextBox",buttonText:"Calendar",nextPrevFormat:"Image",showDayHeader:true,showNextPrevMonth:true,showTitle:true,downYearSelectorImageFileName:"arrow_down.gif",upDownYearSelectorImageWidth:9,upDownYearSelectorImageHeight:5,upYearSelectorText:"+",downYearSelectorText:"-",upDownYearSelectorFormat:"Image",monthSelectorXOffset:-11,monthSelectorYOffset:2,yearSelectorXOffset:-11,yearSelectorYOffset:2,nullDate:null,visibleDate:null,dateOrder:"mdy",onClientDayRender:"",onClientPreParse:"",onClientCalculateWeekNumber:"",onClientBeforeCalendarOpen:"",onClientBeforeCalendarClose:"",onClientAfterCalendarOpen:"ConcatShadow2DatePicker",onClientBeforeSelectionChanged:"",onClientAfterSelectionChanged:"",onClientBeforeVisibleMonthChanged:"",onClientAfterVisibleMonthChanged:"ConcatShadow2DatePicker",popUpStyle:"",popUpStyleCssClass:"bdpPopUp",calendarStyle:"",calendarStyleCssClass:"bdpCalendar",noneButtonStyle:"",noneButtonStyleCssClass:"bdpClearButton",todayButtonStyle:"",todayButtonStyleCssClass:"bdpTodayButton",titleStyle:"",titleStyleCssClass:"bdpTitle",nextPrevStyle:"",nextPrevStyleCssClass:"bdpNextPrev",dayHeaderStyle:"",dayHeaderStyleCssClass:"bdpDayHeader",dayStyle:"",dayStyleCssClass:"bdpDay",otherMonthDayStyle:"",otherMonthDayStyleCssClass:"bdpOtherMonthDay bdpDay",weekendDayStyle:"",weekendDayStyleCssClass:"bdpWeekendDay bdpDay",selectedDayStyle:"",selectedDayStyleCssClass:"bdpSelectedDay bdpDay",todayDayStyle:"",todayDayStyleCssClass:"bdpTodayDay bdpDay",footerStyle:"",footerStyleCssClass:"bdpFooter",footNoteStyle:"",footNoteStyleCssClass:"bdpFootNote",weekNumberStyle:"",weekNumberStyleCssClass:"bdpWeekNumber",otherMonthDayWeekendDayStyle:"",otherMonthDayWeekendDayStyleCssClass:"bdpOtherMonthDay bdpDay bdpWeekendDay bdpDay bdpDay",selectedDayTodayDayStyle:"",selectedDayTodayDayStyleCssClass:"bdpTodayDay bdpDay bdpSelectedDay bdpDay bdpDay",selectedDayWeekendDayStyle:"",selectedDayWeekendDayStyleCssClass:"bdpSelectedDay bdpDay bdpWeekendDay bdpDay bdpDay",todayDayWeekendDayStyle:"",todayDayWeekendDayStyleCssClass:"bdpTodayDay bdpDay bdpWeekendDay bdpDay bdpDay",timePickerID:"",postBackFunction:"__doPostBack('ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_datePicker','')",dateFormat:"M/d/yyyy",culture:"BDPCulture_en_US",nextMonthImageUrl:"/Images/Basic_Date_Picker/ArrowForward.png",prevMonthImageUrl:"/Images/Basic_Date_Picker/ArrowBack.png",upYearSelectorImageUrl:"/Images/Basic_Date_Picker/arrow_up.gif",downYearSelectorImageUrl:"/Images/Basic_Date_Picker/arrow_down.gif",specialDates:"",clientID:"ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker"};
+//--></script><script type="text/javascript"><!--
+var BDPCulture_en_US = {monthNames:new Array("January","February","March","April","May","June","July","August","September","October","November","December"), monthNamesAbbr:new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"), dayNames:new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"), dayNamesAbbr:new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat"), firstDayOfWeek:0};
+//--></script><script type="text/javascript" src="/WebResource.axd?d=24hNxjCsyEcXzpLMQxpY2kqp-KAJYcDTXeVGT8gcvwyqKDx1tG_NIRFjbOyOsWi9Zto18menY98GoZqvGApoFWPMfre786SlGt6ymtEqYeOO5ZYj0dBBOLtbRCJDSMmbaJkkyB41Kn67S1Tl2hBR3VaDOiWN00ShdRJdzSD2rWPI6WH-0&amp;t=638118827120000000"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7BF302AD" />
+            <input type="hidden" name="ctl00$HiddenPlantOID" id="ctl00_HiddenPlantOID" />
+            <input name="ctl00$_scrollPosHidden" type="hidden" id="ctl00__scrollPosHidden" />
+
+
+
+            <table class="layoutTable">
+                <tr>
+                    <td>
+                        <div id="divHeaderCollapsible" class="header collapsible" style="z-index: 11">
+
+    <h1 class="portalName header"><a id="ctl00_Header_hlStart" href="/Home">SUNNY PORTAL</a></h1>
+
+
+    <ul class="headerNav">
+        <li class="hasChildren last">
+            <a href="#">US-English</a>
+            <ul id="ctl00_Header_LanguageList" class="headerNavSubLevel twoColumn css3pie"><li class="first"><a href="#">US-English</a></li><li><a id="ctl00_Header_lang_de-de" class="lang_de-de" href="javascript:__doPostBack(&#39;ctl00$Header$lang_de-de&#39;,&#39;&#39;)">Deutsch</a></li><li><a id="ctl00_Header_lang_en-gb" class="lang_en-gb" href="javascript:__doPostBack(&#39;ctl00$Header$lang_en-gb&#39;,&#39;&#39;)">English</a></li><li><a id="ctl00_Header_lang_it-it" class="lang_it-it" href="javascript:__doPostBack(&#39;ctl00$Header$lang_it-it&#39;,&#39;&#39;)">Italiano</a></li><li><a id="ctl00_Header_lang_es-es" class="lang_es-es" href="javascript:__doPostBack(&#39;ctl00$Header$lang_es-es&#39;,&#39;&#39;)">Español</a></li><li><a id="ctl00_Header_lang_fr-fr" class="lang_fr-fr" href="javascript:__doPostBack(&#39;ctl00$Header$lang_fr-fr&#39;,&#39;&#39;)">Français</a></li><li><a id="ctl00_Header_lang_ko-kr" class="lang_ko-kr" href="javascript:__doPostBack(&#39;ctl00$Header$lang_ko-kr&#39;,&#39;&#39;)">한국어</a></li><li><a id="ctl00_Header_lang_cs-cz" class="lang_cs-cz" href="javascript:__doPostBack(&#39;ctl00$Header$lang_cs-cz&#39;,&#39;&#39;)">Čeština</a></li><li><a id="ctl00_Header_lang_zh-cn" class="lang_zh-cn" href="javascript:__doPostBack(&#39;ctl00$Header$lang_zh-cn&#39;,&#39;&#39;)">中文</a></li><li><a id="ctl00_Header_lang_el-gr" class="lang_el-gr" href="javascript:__doPostBack(&#39;ctl00$Header$lang_el-gr&#39;,&#39;&#39;)">Ελληνικά</a></li><li><a id="ctl00_Header_lang_pt-pt" class="lang_pt-pt" href="javascript:__doPostBack(&#39;ctl00$Header$lang_pt-pt&#39;,&#39;&#39;)">Português</a></li><li><a id="ctl00_Header_lang_nl-nl" class="lang_nl-nl" href="javascript:__doPostBack(&#39;ctl00$Header$lang_nl-nl&#39;,&#39;&#39;)">Nederlands</a></li><li><a id="ctl00_Header_lang_ja-jp" class="lang_ja-jp" href="javascript:__doPostBack(&#39;ctl00$Header$lang_ja-jp&#39;,&#39;&#39;)">日本語</a></li><li><a id="ctl00_Header_lang_tr-tr" class="lang_tr-tr" href="javascript:__doPostBack(&#39;ctl00$Header$lang_tr-tr&#39;,&#39;&#39;)">Türkçe</a></li><li><a id="ctl00_Header_lang_pl-pl" class="lang_pl-pl" href="javascript:__doPostBack(&#39;ctl00$Header$lang_pl-pl&#39;,&#39;&#39;)">Polski</a></li></ul>
+        </li>
+    </ul>
+
+
+
+
+
+
+    <div id="toolbar">
+        <ul id="rightTopNav">
+
+
+        </ul>
+    </div>
+
+
+</div>
+
+<div id="headerSeparator">
+    <a href="../UserControls/#" id="collapseHeader" class="dummyClass"></a>
+</div>
+
+                        <table class="layoutTable">
+                            <tr>
+                                <td id="tdMasterLeftMenu" class="">
+                                    <div id="naviSeparator">
+                                        <a href="../../..#" id="collapseNavi" class="">Collapse</a>
+                                    </div>
+
+
+<script type="text/javascript">
+<!--
+    function switchNaviListElement(e, hid) {
+
+        var childNode2 = $(e.childNodes[2]);
+        if (childNode2.attr("id") == "")
+            childNode2.attr("id", "NaviUL_" + hid);
+
+        e = $(e);
+        if (e.hasClass("closed")) {
+            if ($('#' + hid))
+                $('#' + hid).val("1");
+            e.removeClass("closed").addClass("opened");
+            if (globalAnimateEffects) {
+                childNode2.slideDown("normal");
+            }
+            else {
+                childNode2.show();
+            }
+        } else {
+            if ($('#' + hid))
+                $('#' + hid).val("0");
+            if (globalAnimateEffects) {
+                childNode2.slideUp("normal", function () {
+                    e.removeClass("opened").addClass("closed");
+                });
+            }
+            else {
+                e.removeClass("opened").addClass("closed");
+                childNode2.hide();
+            }
+        }
+    }
+
+    var CPLAjaxRequest = null;
+    var CPLAjaxAbort = false;
+    var idPlantLog = "";
+    function GetPlantLogsPerAjax(id) {
+        idPlantLog = id;
+        window.setTimeout("GetPlantLogsPerAjaxWait(idPlantLog)", 100);
+    }
+    function GetPlantLogsPerAjaxWait(id) {
+        idPlantLog = id;
+        var tmpNow = new Date();
+        CPLAjaxURL = "/Templates/AjaxCountPlantLogs.aspx?id=" + idPlantLog + "&timestamp=" + tmpNow.getTime();
+        document.getElementsByTagName("body")[0].style.cursor = "wait";
+        if (window.XMLHttpRequest) {// Test, ob der Browser ein eingebautes XMLHttpRequest-Objekt besitzt oder...
+            CPLAjaxRequest = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {// ... ob er das Objekt per ActiveX implementiert
+            CPLAjaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if (CPLAjaxRequest != null) {// Ist Ajax möglich...
+            if (CPLAjaxRequest.readyState == 2 || CPLAjaxRequest.readyState == 3)
+                CPLAjaxRequest.abort();
+            CPLAjaxRequest.onreadystatechange = CPLAjax_CheckReadyState;
+            CPLAjaxRequest.open("GET", CPLAjaxURL, true);
+            CPLAjaxRequest.send(null);
+        }
+    }
+
+    function CPLAjax_CheckReadyState() {
+        if (CPLAjaxAbort) {
+            CPLAjaxRequest.abort();
+            return false;
+        }
+        var HTMLCode = "";
+        var DIVCode = "";
+        var DIV_ID = "<div id=\"DivCountPlantLogs\">";
+        if (CPLAjaxRequest.readyState == 4) {
+            if (CPLAjaxRequest.status == 200) {
+                HTMLCode = CPLAjaxRequest.responseText;
+                if (HTMLCode.indexOf(DIV_ID) > 0) {
+                    HTMLCode = HTMLCode.substring(HTMLCode.indexOf(DIV_ID) + DIV_ID.length);
+                    if (HTMLCode.indexOf(DIV_ID.replace("<", "</")) > 0) {
+                        DIVCode = HTMLCode.substr(0, HTMLCode.indexOf(DIV_ID.replace("<", "</")));
+                    }
+                }
+                if (!isNaN(DIVCode)) {
+                    if ($('#' + idPlantLog)) {
+                        if ($('#' + idPlantLog).html().indexOf(DIVCode) < 0) {
+                            $('#' + idPlantLog).html($('#' + idPlantLog).html() + DIVCode);
+                            $('#' + idPlantLog).attr("title", $('#' + idPlantLog).attr("title") + DIVCode);
+                        }
+                    }
+                }
+            }
+            $("body").css("cursor", "auto");
+        }
+    }
+
+    function LeftMenuItemClientClick() {
+        CPLAjaxAbort = true;
+        if (CPLAjaxRequest != null) {
+            CPLAjaxRequest.abort();
+        }
+
+        try {
+            var innerPrm = Sys.WebForms.PageRequestManager.getInstance();
+            if (innerPrm != null && innerPrm.get_isInAsyncPostBack()) {
+                innerPrm.abortPostBack();
+            }
+        } catch (e) { }
+    }
+
+    function disableBrowserRecommendationClick() {
+        $("#hfDisableBrowserRecommendation").val($("#cbxDisableBrowserRecommendation").prop("checked"));
+        return false;
+    }
+
+    // -->
+</script>
+<!-- Begin LightBox -->
+
+<!-- End LightBox -->
+<input type="hidden" name="ctl00$NavigationLeftMenuControl$hfDisableBrowserRecommendation" id="hfDisableBrowserRecommendation" />
+
+
+
+
+<div id="zoomDiagramBG" style="display:none;">
+    <table cellpadding="0" cellspacing="0" border="0" style="height:100%;width:100%;">
+    <tr>
+    <td align="center">
+        <table cellpadding="0" cellspacing="0" border="0" style="width:auto;">
+        <tr>
+        <td id="zoomDiagramCancel" align="right">
+            <img src="/Images/cancel.png" width="16" height="16" style="margin:2px;cursor:pointer;" onclick="ZoomDiagramShow()" alt="close" />
+        </td>
+        </tr>
+        <tr>
+        <td id="zoomDiagramCont" align="center" style="cursor:pointer;background-color:#fff;overflow:scroll;" onclick="ZoomDiagramShow()">
+            <img id="zoomDiagramLoadingImage" src="/Images/loading.gif" width="62" height="23" alt="loading" style="margin:100px 300px 100px 300px;" />
+        </td>
+        </tr>
+        <tr>
+        <td id="zoomDiagramOnlyLoading" align="center" style="display:none;">
+            <img src="/Images/loading_animation.gif" width="128" height="128" alt="loading" />
+        </td>
+        </tr>
+        </table>
+    </td>
+    </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+<!--
+// da sich dieser Code nur im Content-Div befindet und nicht auf oberster Ebene,
+// muss man den Umweg über "DivOpac50BG" gehen, damit auch der IE6 den kompletten Bildschirm ausfüllt
+var CurrentOpacDiv = null;
+var WinOpenParam = "";
+if ($("#DivOpac50BG"))
+{
+    $("#DivOpac50BG").html($("#zoomDiagramBG").html());
+    CurrentOpacDiv = $("#DivOpac50BG");
+    WinOpenParam = "toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=900,height=450,top=60,left=60";
+}
+else
+{
+    //CurrentOpacDiv = gebi("zoomDiagramBG");
+}
+var OriginalOpacDiv = CurrentOpacDiv;
+var zoomDiagramVisible = false;
+var zoomDiagramURL = "";
+var AjaxRequest = null;
+var userControlID = "";
+var diagramID = "";
+
+function ZoomDiagramStart(Year, Month, Day, Hour, Index, OID, Type) {
+    if (typeof (globalFrameDepth) != "undefined") {
+        if (globalFrameDepth > 1) {
+            alert("Zooming within frames not possible");
+            return;
+        }
+    }
+    var DiagramWidth = (window.innerWidth ? window.innerWidth : document.body.clientWidth) - 30;
+    var DiagramHeight = Math.round(DiagramWidth / 3.5) + 20;
+    diagramID = "";
+    if (Year == "Comparison")
+    {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/YearCompScaleUp.aspx?ChannelID=" + Month + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&plant=" + OID;
+        userControlID = "UserControlShowYearComparison1";
+    }
+    else if (Type == "EnergyPower") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/EnergyPowerScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&IntervalID=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowEnergyAndPower1";
+    }
+    else if (Type == "EnergyBalance") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/EnergyBalanceScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&IntervalID=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowEnergyBalance1";
+    }
+    else if (Type == "FeedInManagement") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/FeedInScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowFeedInManagement1";
+        diagramID = "MainChart";
+    }
+    else if (Type == "InverterSelection") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/InverterSelectionScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&IntervalID=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        zoomDiagramURL += "&localUtcSec=" + (new Date()).getUTCSeconds();
+        userControlID = "UserControlShowInverterSelection1";
+    }
+    else if (Type == "Sensors") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/SensorsScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Diagram=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowSensors1";
+        if (Hour == "0") {
+            diagramID = "SolIrrDiagram";
+        }
+        else {
+            diagramID = "TmpDiagram";
+        }
+    }
+    else if (Type == "PerformanceRatio") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/PerformanceRatioScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Diagram=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowPerformanceRatio1";
+        if (Hour == "0") {
+            diagramID = "MonthDiagram";
+        }
+        else {
+            diagramID = "YearDiagram";
+        }
+    }
+    else if (Type == "Temperature") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/TemperatureScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Diagram=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowTemperature1";
+        diagramID = "TmpDiagram";
+    }
+    else
+    {
+        zoomDiagramURL = "/Templates/DiagrammScaleUp.aspx?TextBoxYear=" + Year + "&TextBoxMonth=" + Month + "&TextBoxDay=" + Day + "&TextBoxHour=" + Hour + "&TextboxIndex=" + Index + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&OID=" + OID;
+        userControlID = "";
+    }
+    document.getElementsByTagName("body")[0].style.cursor = "wait";
+    if (window.XMLHttpRequest)
+	{// Test, ob der Browser ein eingebautes XMLHttpRequest-Objekt besitzt oder...
+	    AjaxRequest = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject)
+    {// ... ob er das Objekt per ActiveX implementiert
+	    AjaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	if (AjaxRequest != null)
+	{// Ist Ajax möglich...
+        ZoomDiagramShow();
+        if (AjaxRequest.readyState == 2 || AjaxRequest.readyState == 3)
+            AjaxRequest.abort();
+	    AjaxRequest.onreadystatechange = Ajax_CheckReadyState;
+	    AjaxRequest.open("GET", zoomDiagramURL, true);
+	    AjaxRequest.send(null);
+	}
+	else
+    {// ... sonst Diagramm im neuen Fenster öffnen
+        document.getElementsByTagName("body")[0].style.cursor = "auto";
+        winZoomDiagram = window.open(zoomDiagramURL, "Popupfenster", WinOpenParam);
+        winZoomDiagram.focus();
+	}
+}
+
+function Ajax_CheckReadyState()
+{
+    var HTMLCode = "";
+    var IMGCode = "";
+    if (AjaxRequest.readyState == 4)
+	{
+	    if (AjaxRequest.status == 200) {
+	        if (diagramID == "") {
+	            diagramID = "_diagram";
+	        }
+	        HTMLCode = AjaxRequest.responseText;
+	        if (HTMLCode.indexOf("<div id=\"zoomDiagramBG\" style=\"display:none;\">") > 0) {
+	            // den "eigenen" Code herausfiltern
+	            HTMLCode = HTMLCode.substr(0, HTMLCode.indexOf("<div id=\"zoomDiagramBG\" style=\"display:none;\">"));
+	        }
+	        var IMG_ID = "<img id=\"UserControl:" + diagramID;
+	        if (HTMLCode.indexOf("<img id=\"UserControl$" + diagramID) > 0)
+	        {
+	            IMG_ID = "<img id=\"UserControl$" + diagramID;
+	        }
+	        else if (HTMLCode.indexOf("<img id=\"" + userControlID + ":" + diagramID) > 0) {
+	            IMG_ID = "<img id=\"" + userControlID + ":" + diagramID;
+	        }
+	        else if (HTMLCode.indexOf("<img id=\"" + userControlID + "$" + diagramID) > 0) {
+	            IMG_ID = "<img id=\"" + userControlID + "$" + diagramID;
+	        }
+	        IMGCode = "";
+		    if (HTMLCode.indexOf("<map id") > 0)
+		    {
+		        HTMLCode = HTMLCode.substring(HTMLCode.indexOf("<map id"));
+		        if (HTMLCode.indexOf(IMG_ID) > 0)
+    		    {
+    		        IMGCode = HTMLCode.substr(0, HTMLCode.indexOf(IMG_ID));
+    		        HTMLCode = HTMLCode.substring(HTMLCode.indexOf(IMG_ID));
+			        if (HTMLCode.indexOf("/>") > 0)
+    		        {
+    		            IMGCode = IMGCode + HTMLCode.substr(0, HTMLCode.indexOf("/>") + 2);
+		            }
+		        }
+		        IMGCode = IMGCode.replace(/\n/g," \n");
+		    }
+			else if (HTMLCode.indexOf(IMG_ID) > 0)
+		    {
+		        HTMLCode = HTMLCode.substring(HTMLCode.indexOf(IMG_ID));
+		        if (HTMLCode.indexOf("/>") > 0)
+		        {
+		            IMGCode = HTMLCode.substr(0, HTMLCode.indexOf("/>") + 2);
+	            }
+	        }
+	        if (IMGCode != "")
+		    {
+                $("#zoomDiagramCont").html(IMGCode);
+            }
+            else
+            {
+                ZoomDiagramShow();
+                winZoomDiagram = window.open(zoomDiagramURL, "Popupfenster", WinOpenParam);
+                winZoomDiagram.focus();
+            }
+	    }
+	    else
+	    {
+	        IMGCode = "<span style=\"margin:10px\">Unfortunately, the diagramme cannot be displayed.</span>"
+		    alert("An error occured:\n" + AjaxRequest.statusText);
+	    }
+	    $("body").css("cursor", "auto");
+	}
+}
+
+// todo completely replace with jquery .show(effect)
+var zoomDiagramContSlide = false;
+var zoomDiagramContWidth = null;
+var zoomDiagramContHeight = null;
+var zoomDiagramFadeFactor = 0;
+
+// todo completely replace with jquery .show(effect)
+function ZoomDiagramShow(slide)
+{
+    if (globalAnimateEffects && typeof(slide) != "undefined") {
+        zoomDiagramContSlide = true;
+    }
+    if (zoomDiagramVisible)
+    {
+        if (zoomDiagramContSlide) {
+            SlideZoomDiagram(-1);
+        }
+        else {
+            if (globalAnimateEffects) {
+                zoomDiagramFadeFactor = 100;
+                FadeZoomDiagram(-1);
+            }
+            else {
+                if (CurrentOpacDiv) {
+                    $(CurrentOpacDiv).hide();
+                }
+                else {
+                    $("#zoomDiagramBG").hide();
+                }
+            }
+        }
+        zoomDiagramVisible = false;
+    }
+    else
+    {
+        if (CurrentOpacDiv) {
+            $(CurrentOpacDiv).show();
+        }
+        else {
+            $("#zoomDiagramBG").show();
+        }
+        if (zoomDiagramContSlide) {
+            if (zoomDiagramContWidth == null) {
+                zoomDiagramContWidth = $("#zoomDiagramCont").offsetWidth;
+                zoomDiagramContHeight = $("#zoomDiagramCont").offsetHeight;
+            }
+            $("#zoomDiagramCont").width(zoomDiagramContWidth.toString() + "px"); // Breite auf 0 setzen
+            $("#zoomDiagramCont").height("0px"); // Höhe auf 0 setzen
+            SlideZoomDiagram(1);
+        }
+        if (globalAnimateEffects) {
+            zoomDiagramFadeFactor = 0;
+            FadeZoomDiagram(1);
+        }
+        zoomDiagramVisible = true;
+    }
+}
+
+// todo completely replace with jquery .show(effect)
+function EndFadeZoomDiagram(status) {
+    if (CurrentOpacDiv) {
+        $(CurrentOpacDiv).css("filter", "");
+        $(CurrentOpacDiv).css("opacity", "");
+    }
+    else {
+        $("#zoomDiagramBG").css("filter", "");
+        $("#zoomDiagramBG").css("opacity", "");
+    }
+    if (status == -1) {
+        if (CurrentOpacDiv) {
+            $(CurrentOpacDiv).hide();
+        } else {
+            $("#zoomDiagramBG").hide();
+        }
+        $("#zoomDiagramCont").html("<img src=\"/Images/loading.gif\" width=\"62\" height=\"23\" alt=\"loading\" style=\"margin:100px 300px 100px 300px;\" />");
+        CurrentOpacDiv = OriginalOpacDiv;
+    }
+    require(['sma-tooltip'], function(tooltip) { tooltip.apply(); });
+}
+
+// todo completely replace with jquery .show(effect)
+function FadeZoomDiagram(status) {
+    var fadeIntervallTime = 20;
+    var fadeStepFactor = 10;
+    if (navigator.appVersion.indexOf("MSIE 6") >= 0)
+        fadeStepFactor = 100;
+	else if (navigator.appVersion.match(/iPad/i) || navigator.appVersion.match(/iPhone/i) || navigator.appVersion.match(/iPod/i))
+	    fadeStepFactor = 100;
+
+    zoomDiagramFadeFactor = zoomDiagramFadeFactor + (status * fadeStepFactor);
+    if (zoomDiagramFadeFactor <= 0) {
+        zoomDiagramFadeFactor = 0; // FadeFactor auf 0 setzen
+        EndFadeZoomDiagram(status);
+        return;
+    }
+    else if (zoomDiagramFadeFactor >= 100) {
+        zoomDiagramFadeFactor = 100; // FadeFactor auf Maximum setzen
+        EndFadeZoomDiagram(status);
+        return;
+    }
+    var tmpFadeFactorFilter = Math.round(zoomDiagramFadeFactor / 4 * 3); // den IE Filter nur auf die Hälfte setzen, da sonst auch das Hintergrund-png den Filter bekommt !!!
+    var tmpFadeFactorOpacity = zoomDiagramFadeFactor / 100;
+    if (CurrentOpacDiv) {
+        $(CurrentOpacDiv).css("filter", "alpha(opacity: " + tmpFadeFactorFilter.toString() + ")");
+        $(CurrentOpacDiv).css("opacity", tmpFadeFactorOpacity);
+    }
+    else {
+        $("#zoomDiagramBG").css("filter", "alpha(opacity: " + tmpFadeFactorFilter.toString() + ")");
+        $("#zoomDiagramBG").css("opacity", tmpFadeFactorOpacity);
+    }
+
+    setTimeout('FadeZoomDiagram(' + status + ')', fadeIntervallTime);
+}
+
+// todo completely replace with jquery .show(effect)
+function EndSlideZoomDiagram(status) {
+    if (status == -1) {
+        if (CurrentOpacDiv) {
+            $(CurrentOpacDiv).hide();
+        }
+        else {
+            $("#zoomDiagramBG").hide();
+        }
+        $("#zoomDiagramCont").html("<img src=\"/Images/loading.gif\" width=\"62\" height=\"23\" alt=\"loading\" style=\"margin:100px 300px 100px 300px;\" />");
+    }
+    require(['sma-tooltip'], function(tooltip) { tooltip.apply(); });
+}
+
+// todo completely replace with jquery .show(effect)
+function SlideZoomDiagram(status) {
+    var slideIntervallTime = 20;
+    var curDiv = $("#zoomDiagramCont");
+    var newHeight = 0;
+    var orgHeight = zoomDiagramContHeight; // Originalhöhe
+    if (curDiv.height.length > 0)
+        newHeight = parseInt(curDiv.style.height.substring(0, curDiv.style.height.indexOf('px'))); //Höhe ohne "px"
+    else
+        newHeight = orgHeight;
+    if (isNaN(newHeight))
+        return;
+    var slideStepHeight = 10 + Math.round(orgHeight / 20);
+
+    newHeight = newHeight + (status * slideStepHeight);
+    if (newHeight > 0) {
+        curDiv.show();
+        if (newHeight >= orgHeight)
+            newHeight = orgHeight; // Höhe auf Maximum setzen
+    }
+    else {
+        curDiv.height(0); // Höhe auf 0 setzen
+        curDiv.hide();
+        EndSlideZoomDiagram(status);
+        return;
+    }
+    curDiv.style.height = newHeight.toString() + "px"; // Step-Höhe setzen
+    if (newHeight >= orgHeight) {
+        EndSlideZoomDiagram(status);
+        return;
+    }
+    setTimeout('SlideZoomDiagram(' + status + ')', slideIntervallTime);
+}
+
+function ZoomDiagramOnlyLoading()
+{
+    $("#zoomDiagramCancel").hide();
+    $("#zoomDiagramCont").hide();
+    $("#zoomDiagramOnlyLoading").show();
+    ZoomDiagramShow();
+}
+-->
+</script>
+
+
+
+
+<div id="navi" style="padding-bottom:1px;">
+    <ul><li id='lmiPublicPages' ><a href="#" id="TitleLeftMenuNode_0" title="" style="cursor:default"></a><input type="hidden" name="LeftMenuNode_0" id="LeftMenuNode_0" value="1" /><ul><li class="nosub" id='lmiPublicPage_cfb396f5-6109-42e1-8b62-7812cda832f6'><a onclick="LeftMenuItemClientClick();" id="ctl00_NavigationLeftMenuControl_0_0" title="PV System Profile" href="javascript:__doPostBack(&#39;ctl00$NavigationLeftMenuControl$0_0&#39;,&#39;&#39;)">PV System Profile</a></li><li class="nosub selected" id='lmiPublicPage_3e371bac-b19a-4257-853c-aac4d3601c0b'><a onclick="LeftMenuItemClientClick();" id="ctl00_NavigationLeftMenuControl_0_1" title="PV System Overview" href="javascript:__doPostBack(&#39;ctl00$NavigationLeftMenuControl$0_1&#39;,&#39;&#39;)">PV System Overview</a></li></ul></li></ul>
+</div>
+
+<!--
+<script type="text/javascript">
+    /*
+    $(function () {
+        var x = $("img[src$='world_icon.png']");
+        x.toggle();
+    });*/
+</script> -->
+                                </td>
+
+                                <td id="tdMasterContent" class="">
+                                    <div id="content" class="contentFull" style="margin-left:0px;">
+
+    <div class="tabelleFull">
+        <div class="tabs">
+            <span class="tabactive"><span id="ctl00_ContentPlaceHolder1_title">José Manuel Corrales PV System Overview</span></span>
+        </div>
+        <div class="tabcontent">
+            <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_DashboardDiv" class="" style="width:700px;">
+
+    <div style="position: relative;">
+        <div style="float: right; width: 62px; height: 32px; margin-top: -36px;">
+            <div style="width: 62px; height: 32px; position: relative;">
+                <div style="position: absolute; top: 0px; left: 25px;">
+
+
+<!-- icon -->
+<div class="messageWindow-IconContainer" onclick="javascript: MessageWindow.Show(); return false; ">
+	<div class="messageWindow-IconCounter" data-message-type="info">
+		<span>0</span>
+	</div>
+</div>
+
+<!-- message box -->
+<div id="messageWindow-container" class="DivShadowBox messageWindow-ContentContainer">
+    <div class="messageWindow-content"></div>
+    <input type="button" class="btn_100" onclick="javascript: MessageWindow.Hide(); return false; " style="float: right;" value="OK" />
+</div>
+                </div>
+            </div>
+        </div>
+        <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_DataDiv">
+            <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_DivDasboardTitle" style="padding-bottom:20px;">
+                <div id="TabSwitch" class="tabelle" style="background-image:none; padding:0;">
+                    <div class="tabhead">
+                        <div class="tabheadcontent tabswitchhead" style="margin-left:10px;">
+                            <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_TabSwitchDeviceSelectionDiv" class="opened">
+	<a href="#" id="TabSwitchDeviceSelectionHref" onclick="switchTabElement(this.parentNode,'TabSwitchDeviceSelection',false);return false;"><span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_plantData">PV System Data</span></a>
+</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="TabSwitchDeviceSelectionHid" name="TabSwitchDeviceSelectionHid" value="1"/>
+                    <div id="TabSwitchDeviceSelectionContent1" class="tabelle">
+                        <div id="TabSwitchDeviceSelectionContent2" class="tabcontent" style="padding:2px; overflow:hidden;">
+
+                            <!-- Begin widgets -->
+
+
+
+<div class="widgetBox" data-name="pvPower">
+    <div class="widgetHead">Current PV Power</div>
+    <div class="widgetSubHead"></div>
+    <div class="widgetBody">
+        <div class="mainValue">
+            <img class="powerGaugeBackground" src="/Images/Dashboard/gauge.png" alt="" />
+            <img class="powerGaugePointer" src="/Images/Dashboard/currentPlantPowerPointer.png" alt="" />
+            <span
+                class="mainValueAmount"
+                data-peak="1800"
+                data-value="3"
+                data-timestamp="2023-02-23T19:15:00">-</span>
+            <span class="mainValueUnit"></span>
+        </div>
+    </div>
+    <div class="widgetFooter">
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="widgetBox" data-name="pvEnergy">
+    <div class="widgetHead">PV Energy</div>
+    <div class="widgetBody">
+        <div class="mainValue">
+            <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldValue" class="mainValueAmount simpleTextFit">0</span>
+            <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldUnit" class="mainValueUnit">Wh</span><br/>
+            <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldPeriodTitle" class="mainValueDescription">Today</span>
+        </div>
+    </div>
+    <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldTotalDiv" class="widgetFooter">
+        Total:&nbsp;<span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldTotalValue">16.385</span>
+        <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldTotalUnit">MWh</span>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="widgetBox" data-name="co2reduction">
+    <div class="widgetHead">CO2 avoided</div>
+    <div class="widgetBody">
+        <div class="mainValue">
+            <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionValue" class="mainValueAmount simpleTextFit">0</span>
+            <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionUnit" class="mainValueUnit">g</span><br/>
+            <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionPeriodTitle" class="mainValueDescription">Today</span>
+        </div>
+    </div>
+    <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonTotalDiv" class="widgetFooter">
+        Total:&nbsp;<span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionTotalValue">11</span>
+        <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionTotalUnit">t</span>
+    </div>
+</div>
+
+
+
+<div class="widgetBox" data-name="plantInfo">
+    <div class="widgetHead">
+        PV system information
+    </div>
+    <div class="widgetBody">
+        <div class="mainValue">
+            <div>PV system power:</div>
+            <div><strong>1800 Wp</strong></div>
+            <div>Commissioning:</div>
+            <div><strong>1/24/2017</strong></div>
+        </div>
+    </div>
+    <div class="widgetFooter">
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <!-- End widgets -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Begin error div -->
+
+        <!-- End error div -->
+    </div>
+</div>
+
+<div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyAndPowerContainer" class="energyAndPowerContainer" style="width:700px;">
+    <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UpdateProgress0" style="display:none;">
+
+            <div class="updateProgressContent">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="/Images/loading_animation.gif" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+</div>
+    <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_EnergyAndPowerUpdatePanel">
+
+
+<div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_EnergyPowerDiv" class="tabelle" style="width:700px;">
+    <div class="tabs">
+        <a id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_LinkButton_TabFront3" class="tab" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$LinkButton_TabFront3&#39;,&#39;&#39;)"><span>Day</span></a>
+
+
+        <span class="tabactive"><span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_titel_Tab" style="cursor:default">Month</span></span>
+
+        <a id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_LinkButton_TabBack2" class="tab" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$LinkButton_TabBack2&#39;,&#39;&#39;)"><span>Year</span></a>
+        <a id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_LinkButton_TabBack3" class="tab" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$LinkButton_TabBack3&#39;,&#39;&#39;)"><span>Total</span></a>
+        <input type="hidden" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$SelectedIntervalID" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_SelectedIntervalID" value="4" />
+        <input type="hidden" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$PlantName" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_PlantName" value="José Manuel Corrales" />
+        <input type="hidden" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$UseIntervalHour" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_UseIntervalHour" value="1" />
+    </div>
+    <div class="tabcontent">
+        <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_DataDiv">
+            <table cellpadding="0" cellspacing="0" style="width:auto;"><tr><td>
+                <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_DiagramDiv" style="position:relative; z-index:0;">
+                    <map id="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_diagramMap" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_diagramMap">
+<area shape="poly" coords="541,296,541,300,556,300,556,296" title="Total yield
+2/24/23
+0.00" />
+	<area shape="rect" coords="541,298,556,298" title="Total yield
+2/24/23
+0.00" />
+	<area shape="rect" coords="520,86,536,298" title="Total yield
+2/23/23
+7.74" />
+	<area shape="rect" coords="499,79,515,298" title="Total yield
+2/22/23
+8.00" />
+	<area shape="rect" coords="478,97,494,298" title="Total yield
+2/21/23
+7.35" />
+	<area shape="rect" coords="456,193,472,298" title="Total yield
+2/20/23
+3.84" />
+	<area shape="rect" coords="435,134,450,298" title="Total yield
+2/19/23
+5.99" />
+	<area shape="rect" coords="414,119,429,298" title="Total yield
+2/18/23
+6.52" />
+	<area shape="rect" coords="393,234,409,298" title="Total yield
+2/17/23
+2.34" />
+	<area shape="rect" coords="372,54,388,298" title="Total yield
+2/16/23
+8.90" />
+	<area shape="rect" coords="351,179,367,298" title="Total yield
+2/15/23
+4.36" />
+	<area shape="rect" coords="329,169,345,298" title="Total yield
+2/14/23
+4.73" />
+	<area shape="rect" coords="308,54,323,298" title="Total yield
+2/13/23
+8.92" />
+	<area shape="rect" coords="287,123,303,298" title="Total yield
+2/12/23
+6.39" />
+	<area shape="rect" coords="266,72,282,298" title="Total yield
+2/11/23
+8.25" />
+	<area shape="rect" coords="245,159,261,298" title="Total yield
+2/10/23
+5.09" />
+	<area shape="rect" coords="223,146,239,298" title="Total yield
+2/9/23
+5.54" />
+	<area shape="rect" coords="202,199,217,298" title="Total yield
+2/8/23
+3.61" />
+	<area shape="rect" coords="181,111,196,298" title="Total yield
+2/7/23
+6.83" />
+	<area shape="rect" coords="160,50,176,298" title="Total yield
+2/6/23
+9.05" />
+	<area shape="rect" coords="139,44,155,298" title="Total yield
+2/5/23
+9.29" />
+	<area shape="rect" coords="118,49,134,298" title="Total yield
+2/4/23
+9.10" />
+	<area shape="rect" coords="96,51,112,298" title="Total yield
+2/3/23
+9.02" />
+	<area shape="rect" coords="75,71,90,298" title="Total yield
+2/2/23
+8.27" />
+	<area shape="rect" coords="54,50,69,298" title="Total yield
+2/1/23
+9.06" />
+	<area shape="poly" coords="612,103,612,107,633,107,633,103" title="Average yield expectations
+2/27/23 - 2/28/23
+7.04 - 7.04" />
+	<area shape="poly" coords="591,103,591,107,612,107,612,103" title="Average yield expectations
+2/26/23 - 2/27/23
+7.04 - 7.04" />
+	<area shape="poly" coords="570,103,570,107,591,107,591,103" title="Average yield expectations
+2/25/23 - 2/26/23
+7.04 - 7.04" />
+	<area shape="poly" coords="549,103,549,107,570,107,570,103" title="Average yield expectations
+2/24/23 - 2/25/23
+7.04 - 7.04" />
+	<area shape="poly" coords="528,103,528,107,549,107,549,103" title="Average yield expectations
+2/23/23 - 2/24/23
+7.04 - 7.04" />
+	<area shape="poly" coords="506,103,506,107,528,107,528,103" title="Average yield expectations
+2/22/23 - 2/23/23
+7.04 - 7.04" />
+	<area shape="poly" coords="485,103,485,107,506,107,506,103" title="Average yield expectations
+2/21/23 - 2/22/23
+7.04 - 7.04" />
+	<area shape="poly" coords="464,103,464,107,485,107,485,103" title="Average yield expectations
+2/20/23 - 2/21/23
+7.04 - 7.04" />
+	<area shape="poly" coords="443,103,443,107,464,107,464,103" title="Average yield expectations
+2/19/23 - 2/20/23
+7.04 - 7.04" />
+	<area shape="poly" coords="422,103,422,107,443,107,443,103" title="Average yield expectations
+2/18/23 - 2/19/23
+7.04 - 7.04" />
+	<area shape="poly" coords="400,103,400,107,422,107,422,103" title="Average yield expectations
+2/17/23 - 2/18/23
+7.04 - 7.04" />
+	<area shape="poly" coords="379,103,379,107,400,107,400,103" title="Average yield expectations
+2/16/23 - 2/17/23
+7.04 - 7.04" />
+	<area shape="poly" coords="358,103,358,107,379,107,379,103" title="Average yield expectations
+2/15/23 - 2/16/23
+7.04 - 7.04" />
+	<area shape="poly" coords="337,103,337,107,358,107,358,103" title="Average yield expectations
+2/14/23 - 2/15/23
+7.04 - 7.04" />
+	<area shape="poly" coords="316,103,316,107,337,107,337,103" title="Average yield expectations
+2/13/23 - 2/14/23
+7.04 - 7.04" />
+	<area shape="poly" coords="295,103,295,107,316,107,316,103" title="Average yield expectations
+2/12/23 - 2/13/23
+7.04 - 7.04" />
+	<area shape="poly" coords="273,103,273,107,295,107,295,103" title="Average yield expectations
+2/11/23 - 2/12/23
+7.04 - 7.04" />
+	<area shape="poly" coords="252,103,252,107,273,107,273,103" title="Average yield expectations
+2/10/23 - 2/11/23
+7.04 - 7.04" />
+	<area shape="poly" coords="231,103,231,107,252,107,252,103" title="Average yield expectations
+2/9/23 - 2/10/23
+7.04 - 7.04" />
+	<area shape="poly" coords="210,103,210,107,231,107,231,103" title="Average yield expectations
+2/8/23 - 2/9/23
+7.04 - 7.04" />
+	<area shape="poly" coords="189,103,189,107,210,107,210,103" title="Average yield expectations
+2/7/23 - 2/8/23
+7.04 - 7.04" />
+	<area shape="poly" coords="167,103,167,107,189,107,189,103" title="Average yield expectations
+2/6/23 - 2/7/23
+7.04 - 7.04" />
+	<area shape="poly" coords="146,103,146,107,167,107,167,103" title="Average yield expectations
+2/5/23 - 2/6/23
+7.04 - 7.04" />
+	<area shape="poly" coords="125,103,125,107,146,107,146,103" title="Average yield expectations
+2/4/23 - 2/5/23
+7.04 - 7.04" />
+	<area shape="poly" coords="104,103,104,107,125,107,125,103" title="Average yield expectations
+2/3/23 - 2/4/23
+7.04 - 7.04" />
+	<area shape="poly" coords="83,103,83,107,104,107,104,103" title="Average yield expectations
+2/2/23 - 2/3/23
+7.04 - 7.04" />
+	<area shape="poly" coords="62,103,62,107,83,107,83,103" title="Average yield expectations
+2/1/23 - 2/2/23
+7.04 - 7.04" />
+	</map>
+	<div id="SFXdiv-29549" onmouseout="SFX_HideIconOver()" class="SFXIconHover" oncontextmenu="return false">
+	</div>
+	<div id="SFXdiv-29551" onmouseout="SFX_HideIconOver()" class="SFXIconHover" oncontextmenu="return false">
+	</div>
+	<div id="SFXdiv-29550" onmouseout="SFX_HideIconOver()" class="SFXIconHover" oncontextmenu="return false">
+	</div>
+	<div id="SFXdiv-29552" onmouseout="SFX_HideIconOver()" class="SFXIconHover" oncontextmenu="return false">
+	</div>
+	<img id="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_diagram" src="/chartfx70/temp/CFV0224_0919340D720.png"  WIDTH="662" HEIGHT="400"  usemap="#ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_diagramMap" border="0" oncontextmenu="return SFX_OnChartContextMenu();"/>
+	                <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ButtonsDiv" style="position:absolute; bottom:0px; right:0px; z-index:3; padding:0px; margin:0px; display:none;" onmouseover="ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On()" onmouseout="ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(true)">
+                        <table border="0" cellpadding="0" cellspacing="0" style="width:auto; margin:2px;"><tr style="line-height:0"><td style="width:5px;height:5px;"><img src="../Images/Layout/border_al.gif" style="width:5px;height:5px;" /></td><td style="height:5px;background-image:url('../Images/Layout/border_a.gif')"><img src="../Tools/images/pixel.png" style="width:5px;height:5px;" /></td><td style="width:5px;height:5px;"><img src="../Images/Layout/border_ar.gif" style="width:5px;height:5px;" /></td></tr><tr><td style="width:5px;background-image:url('../Images/Layout/border_l.gif')"><img src="../Tools/images/pixel.png" style="width:5px;height:5px;" /></td><td style="text-align:justify; background-color:#FFFFFF; white-space:nowrap;">
+                            <input type="image" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$ImageButtonValues" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ImageButtonValues" title="Details" src="../Images/info.png" onclick="window.open(&#39;../Loading.html&#39;, &#39;Values4&#39;, &#39;toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,fullscreen=0,width=600,height=450,top=60,left=60&#39;);" style="padding-top:2px;" />
+
+                            <a id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_HyperLinkLup" onclick="ZoomDiagramStart(&#39;2023&#39;,&#39;2&#39;,&#39;24&#39;,&#39;4&#39;,&#39;UserControlShowEnergyAndPower1&#39;,&#39;46e9985f-128a-4da8-a70d-e95f72085ca4&#39;,&#39;EnergyPower&#39;)" href="javascript:void(0)"><img id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ImageLup" title="Open larger view" src="../Images/maximize.png" height="16" width="16" style="margin-left:5px;padding-top:2px; cursor:pointer;" /></a>
+                        </td><td style="width:5px;background-image:url('../Images/Layout/border_r.gif')"><img src="../Tools/images/pixel.png" style="width:5px;height:5px;" /></td></tr><tr style="line-height:0"><td style="width:5px;height:5px;"><img src="../Images/Layout/border_ul.gif" style="width:5px;height:5px;" /></td><td style="height:5px;background-image:url('../Images/Layout/border_u.gif')"><img src="../Tools/images/pixel.png" style="width:5px;height:5px;" /></td><td style="width:5px;height:5px;"><img src="../Images/Layout/border_ur.gif" style="width:5px;height:5px;" /></td></tr></table>
+                    </div>
+	                <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_MouseoverLeftDiv" style="position:absolute; bottom:0px; left:0px; z-index:1; padding:0px; margin:0px; width:94px; height:100%; cursor:pointer;" onmouseover="NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On(true)" onmouseout="NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(true)" onclick="ZoomDiagramStart(&#39;2023&#39;,&#39;2&#39;,&#39;24&#39;,&#39;4&#39;,&#39;UserControlShowEnergyAndPower1&#39;,&#39;46e9985f-128a-4da8-a70d-e95f72085ca4&#39;,&#39;EnergyPower&#39;)" title="Open larger view">
+	                    <img id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_MouseoverLeftImg" src="../Tools/images/pixel.png" height="400" width="94" />
+                    </div>
+	                <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateLeftDiv" style="position:absolute; bottom:0px; left:0px; z-index:2; padding:0px; margin:0px; width:94px; height:100%; background: url(../Images/gradient_background_left.png) top left repeat-y; cursor:pointer; display:none;" onclick="SetNavigateDivHidden(this.id,-1)" title="&lt; Month" onmouseover="NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On(true)" onmouseout="NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(true)">
+	                    <table id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateLeftTable" border="0" cellpadding="0" cellspacing="0" style="width:50%;" height="400">
+		<tr>
+			<td valign="middle" align="center">
+                            <img id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_btn_prev_diagram" title="&lt; Month" src="../Images/arrow_left_trans_big.png" height="24" width="15" />
+	                    </td>
+		</tr>
+	</table>
+
+                    </div>
+	                <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_MouseoverMiddleDiv" style="left:94px;width:94px;bottom:0px;z-index:1;height:100%;position:absolute;margin:0px;padding:0px;cursor:pointer;" onclick="ZoomDiagramStart(&#39;2023&#39;,&#39;2&#39;,&#39;24&#39;,&#39;4&#39;,&#39;UserControlShowEnergyAndPower1&#39;,&#39;46e9985f-128a-4da8-a70d-e95f72085ca4&#39;,&#39;EnergyPower&#39;)" title="Open larger view">
+	                    <img id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_MouseoverMiddleImg" src="../Tools/images/pixel.png" height="400" width="474" />
+                    </div>
+	                <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_MouseoverRightDiv" style="position:absolute; bottom:0px; right:0px; z-index:1; padding:0px; margin:0px; width:94px; height:100%; cursor:pointer;" onmouseover="NavigateRightDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On(true)" onmouseout="NavigateRightDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(true)" onclick="ZoomDiagramStart(&#39;2023&#39;,&#39;2&#39;,&#39;24&#39;,&#39;4&#39;,&#39;UserControlShowEnergyAndPower1&#39;,&#39;46e9985f-128a-4da8-a70d-e95f72085ca4&#39;,&#39;EnergyPower&#39;)" title="Open larger view">
+	                    <img id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_MouseoverRightImg" src="../Tools/images/pixel.png" height="400" width="94" />
+                    </div>
+
+                    <input type="hidden" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$NavigateDivHidden" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateDivHidden" />
+                </div>
+            </td></tr>
+            <tr id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_TrDiagramNavigation">
+		<td>
+	            <table cellpadding="0" cellspacing="0" style="width:100%;">
+	            <tr>
+	            <td align="left" style="width:25%; white-space:nowrap;">
+
+                    <div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_divShowForecast"><input id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_chkShowForecast" type="checkbox" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$chkShowForecast" checked="checked" /><label for="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_chkShowForecast">Display the prediction *</label></div>
+	            </td>
+	            <td align="center" style="width:50%; padding-top:1px;">
+                    <input type="image" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$btn_prev" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_btn_prev" title="&lt; Month" class="pagebtn" src="../Images/btn_pageopt_prev.gif" style="vertical-align:bottom; margin-bottom:1px; margin-left:0px;" />
+                    <span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker" class="basicdatepicker" style="display:none;"><!-- Version 1.3.5.0. Copyright Coolite Inc. 2004-2023. All rights reserved. Please visit http://www.basicdatepicker.com/ for more information. --><span style="display:none !important;">&nbsp;</span>
+<link rel="stylesheet" media="all" type="text/css" href="/Images/Basic_Date_Picker/basicdatepicker.css" /><input name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$_datePicker$textBox" type="text" value="2/24/2023" readonly="readonly" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker_textBox" class="inputText centered cursorPointer" onclick="basicDatePicker.ehTextBoxClick(document.getElementById(&#39;ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker_textBox&#39;), document.getElementById(&#39;ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker_textBox&#39;), null, ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePickerParams, true);" onfocus="basicDatePicker.cancelTextBoxClick = true;if(window.basicDatePickerButtonElementClick){basicDatePickerButtonElementClick(document.getElementById(&#39;ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker_textBox&#39;), document.getElementById(&#39;ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker_textBox&#39;), null, ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePickerParams, false)};" onblur="basicDatePicker.ehBlur(document.getElementById(&#39;ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePicker_textBox&#39;), this, ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1__datePickerParams);" style="width:66px;" /></span>
+                    <input type="hidden" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$hidAsynchDatePickerClicked" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_hidAsynchDatePickerClicked" />
+                    <select name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$DatePickerMonth" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_DatePickerMonth" class="inputSelect">
+			<option value="1">
+				Jan
+			</option><option value="2" selected="selected">
+				Feb
+			</option>
+		</select>
+                    <select name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$DatePickerYear" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_DatePickerYear" class="inputSelect">
+			<option value="2017">
+				2017
+			</option><option value="2018">
+				2018
+			</option><option value="2019">
+				2019
+			</option><option value="2020">
+				2020
+			</option><option value="2021">
+				2021
+			</option><option value="2022">
+				2022
+			</option><option value="2023" selected="selected">
+				2023
+			</option>
+		</select>
+                    <input type="image" name="ctl00$ContentPlaceHolder1$PublicPagePlaceholder$PageUserControl$ctl00$PublicPageLoadFixPage$UserControlShowEnergyAndPower1$btn_next" id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_btn_next" disabled="disabled" title="Month >" class="aspNetDisabled pagebtn" src="../Images/btn_pageopt_next.gif" style="vertical-align:bottom; margin-bottom:1px; margin-left:0px;" />
+	            </td>
+	            <td align="right" valign="top" style="width:25%; white-space:nowrap;">
+	                &nbsp;
+	                <img id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_OpenButtonsDivImg" onmouseover="ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On()" onmouseout="ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(true)" src="../Images/open_Menu.png" height="16" width="19" style="padding-top:2px;" />
+
+                </td>
+                </tr>
+                </table>
+            </td>
+	</tr>
+	</table>
+            <div style="clear:left;"></div>
+        </div>
+
+    </div>
+</div>
+<div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_divForecastInfo" style="clear:left;margin-top:10px;width:700px;">
+    <span style="float:left; width:10px;">*</span>
+    <div style="margin-left:10px;"><span id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_lblForecastInfo">The expected average yield results from a manual specification. Depending on the orientation and the irradiation fluctuations between the individual years, there might be considerably larger deviations in contrast to the expected average yield.</span></div>
+</div>
+<div id="ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_divConfigYieldDistribution">
+
+</div>
+
+
+
+<div id="zoomDiagramBG" style="display:none;">
+    <table cellpadding="0" cellspacing="0" border="0" style="height:100%;width:100%;">
+    <tr>
+    <td align="center">
+        <table cellpadding="0" cellspacing="0" border="0" style="width:auto;">
+        <tr>
+        <td id="zoomDiagramCancel" align="right">
+            <img src="/Images/cancel.png" width="16" height="16" style="margin:2px;cursor:pointer;" onclick="ZoomDiagramShow()" alt="close" />
+        </td>
+        </tr>
+        <tr>
+        <td id="zoomDiagramCont" align="center" style="cursor:pointer;background-color:#fff;overflow:scroll;" onclick="ZoomDiagramShow()">
+            <img id="zoomDiagramLoadingImage" src="/Images/loading.gif" width="62" height="23" alt="loading" style="margin:100px 300px 100px 300px;" />
+        </td>
+        </tr>
+        <tr>
+        <td id="zoomDiagramOnlyLoading" align="center" style="display:none;">
+            <img src="/Images/loading_animation.gif" width="128" height="128" alt="loading" />
+        </td>
+        </tr>
+        </table>
+    </td>
+    </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+<!--
+// da sich dieser Code nur im Content-Div befindet und nicht auf oberster Ebene,
+// muss man den Umweg über "DivOpac50BG" gehen, damit auch der IE6 den kompletten Bildschirm ausfüllt
+var CurrentOpacDiv = null;
+var WinOpenParam = "";
+if ($("#DivOpac50BG"))
+{
+    $("#DivOpac50BG").html($("#zoomDiagramBG").html());
+    CurrentOpacDiv = $("#DivOpac50BG");
+    WinOpenParam = "toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=900,height=450,top=60,left=60";
+}
+else
+{
+    //CurrentOpacDiv = gebi("zoomDiagramBG");
+}
+var OriginalOpacDiv = CurrentOpacDiv;
+var zoomDiagramVisible = false;
+var zoomDiagramURL = "";
+var AjaxRequest = null;
+var userControlID = "";
+var diagramID = "";
+
+function ZoomDiagramStart(Year, Month, Day, Hour, Index, OID, Type) {
+    if (typeof (globalFrameDepth) != "undefined") {
+        if (globalFrameDepth > 1) {
+            alert("Zooming within frames not possible");
+            return;
+        }
+    }
+    var DiagramWidth = (window.innerWidth ? window.innerWidth : document.body.clientWidth) - 30;
+    var DiagramHeight = Math.round(DiagramWidth / 3.5) + 20;
+    diagramID = "";
+    if (Year == "Comparison")
+    {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/YearCompScaleUp.aspx?ChannelID=" + Month + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&plant=" + OID;
+        userControlID = "UserControlShowYearComparison1";
+    }
+    else if (Type == "EnergyPower") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/EnergyPowerScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&IntervalID=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowEnergyAndPower1";
+    }
+    else if (Type == "EnergyBalance") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/EnergyBalanceScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&IntervalID=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowEnergyBalance1";
+    }
+    else if (Type == "FeedInManagement") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/FeedInScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowFeedInManagement1";
+        diagramID = "MainChart";
+    }
+    else if (Type == "InverterSelection") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/InverterSelectionScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&IntervalID=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        zoomDiagramURL += "&localUtcSec=" + (new Date()).getUTCSeconds();
+        userControlID = "UserControlShowInverterSelection1";
+    }
+    else if (Type == "Sensors") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/SensorsScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Diagram=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowSensors1";
+        if (Hour == "0") {
+            diagramID = "SolIrrDiagram";
+        }
+        else {
+            diagramID = "TmpDiagram";
+        }
+    }
+    else if (Type == "PerformanceRatio") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/PerformanceRatioScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Diagram=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowPerformanceRatio1";
+        if (Hour == "0") {
+            diagramID = "MonthDiagram";
+        }
+        else {
+            diagramID = "YearDiagram";
+        }
+    }
+    else if (Type == "Temperature") {
+        DiagramHeight = Math.round((window.innerHeight ? window.innerHeight : document.body.clientHeight) / 2) + 20;
+        zoomDiagramURL = "/FixedPages/TemperatureScaleUp.aspx?Year=" + Year + "&Month=" + Month + "&Day=" + Day + "&Diagram=" + Hour + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&ModuleID=" + Index + "&OID=" + OID;
+        userControlID = "UserControlShowTemperature1";
+        diagramID = "TmpDiagram";
+    }
+    else
+    {
+        zoomDiagramURL = "/Templates/DiagrammScaleUp.aspx?TextBoxYear=" + Year + "&TextBoxMonth=" + Month + "&TextBoxDay=" + Day + "&TextBoxHour=" + Hour + "&TextboxIndex=" + Index + "&Width=" + DiagramWidth + "&Height=" + DiagramHeight + "&OID=" + OID;
+        userControlID = "";
+    }
+    document.getElementsByTagName("body")[0].style.cursor = "wait";
+    if (window.XMLHttpRequest)
+	{// Test, ob der Browser ein eingebautes XMLHttpRequest-Objekt besitzt oder...
+	    AjaxRequest = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject)
+    {// ... ob er das Objekt per ActiveX implementiert
+	    AjaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	if (AjaxRequest != null)
+	{// Ist Ajax möglich...
+        ZoomDiagramShow();
+        if (AjaxRequest.readyState == 2 || AjaxRequest.readyState == 3)
+            AjaxRequest.abort();
+	    AjaxRequest.onreadystatechange = Ajax_CheckReadyState;
+	    AjaxRequest.open("GET", zoomDiagramURL, true);
+	    AjaxRequest.send(null);
+	}
+	else
+    {// ... sonst Diagramm im neuen Fenster öffnen
+        document.getElementsByTagName("body")[0].style.cursor = "auto";
+        winZoomDiagram = window.open(zoomDiagramURL, "Popupfenster", WinOpenParam);
+        winZoomDiagram.focus();
+	}
+}
+
+function Ajax_CheckReadyState()
+{
+    var HTMLCode = "";
+    var IMGCode = "";
+    if (AjaxRequest.readyState == 4)
+	{
+	    if (AjaxRequest.status == 200) {
+	        if (diagramID == "") {
+	            diagramID = "_diagram";
+	        }
+	        HTMLCode = AjaxRequest.responseText;
+	        if (HTMLCode.indexOf("<div id=\"zoomDiagramBG\" style=\"display:none;\">") > 0) {
+	            // den "eigenen" Code herausfiltern
+	            HTMLCode = HTMLCode.substr(0, HTMLCode.indexOf("<div id=\"zoomDiagramBG\" style=\"display:none;\">"));
+	        }
+	        var IMG_ID = "<img id=\"UserControl:" + diagramID;
+	        if (HTMLCode.indexOf("<img id=\"UserControl$" + diagramID) > 0)
+	        {
+	            IMG_ID = "<img id=\"UserControl$" + diagramID;
+	        }
+	        else if (HTMLCode.indexOf("<img id=\"" + userControlID + ":" + diagramID) > 0) {
+	            IMG_ID = "<img id=\"" + userControlID + ":" + diagramID;
+	        }
+	        else if (HTMLCode.indexOf("<img id=\"" + userControlID + "$" + diagramID) > 0) {
+	            IMG_ID = "<img id=\"" + userControlID + "$" + diagramID;
+	        }
+	        IMGCode = "";
+		    if (HTMLCode.indexOf("<map id") > 0)
+		    {
+		        HTMLCode = HTMLCode.substring(HTMLCode.indexOf("<map id"));
+		        if (HTMLCode.indexOf(IMG_ID) > 0)
+    		    {
+    		        IMGCode = HTMLCode.substr(0, HTMLCode.indexOf(IMG_ID));
+    		        HTMLCode = HTMLCode.substring(HTMLCode.indexOf(IMG_ID));
+			        if (HTMLCode.indexOf("/>") > 0)
+    		        {
+    		            IMGCode = IMGCode + HTMLCode.substr(0, HTMLCode.indexOf("/>") + 2);
+		            }
+		        }
+		        IMGCode = IMGCode.replace(/\n/g," \n");
+		    }
+			else if (HTMLCode.indexOf(IMG_ID) > 0)
+		    {
+		        HTMLCode = HTMLCode.substring(HTMLCode.indexOf(IMG_ID));
+		        if (HTMLCode.indexOf("/>") > 0)
+		        {
+		            IMGCode = HTMLCode.substr(0, HTMLCode.indexOf("/>") + 2);
+	            }
+	        }
+	        if (IMGCode != "")
+		    {
+                $("#zoomDiagramCont").html(IMGCode);
+            }
+            else
+            {
+                ZoomDiagramShow();
+                winZoomDiagram = window.open(zoomDiagramURL, "Popupfenster", WinOpenParam);
+                winZoomDiagram.focus();
+            }
+	    }
+	    else
+	    {
+	        IMGCode = "<span style=\"margin:10px\">Unfortunately, the diagramme cannot be displayed.</span>"
+		    alert("An error occured:\n" + AjaxRequest.statusText);
+	    }
+	    $("body").css("cursor", "auto");
+	}
+}
+
+// todo completely replace with jquery .show(effect)
+var zoomDiagramContSlide = false;
+var zoomDiagramContWidth = null;
+var zoomDiagramContHeight = null;
+var zoomDiagramFadeFactor = 0;
+
+// todo completely replace with jquery .show(effect)
+function ZoomDiagramShow(slide)
+{
+    if (globalAnimateEffects && typeof(slide) != "undefined") {
+        zoomDiagramContSlide = true;
+    }
+    if (zoomDiagramVisible)
+    {
+        if (zoomDiagramContSlide) {
+            SlideZoomDiagram(-1);
+        }
+        else {
+            if (globalAnimateEffects) {
+                zoomDiagramFadeFactor = 100;
+                FadeZoomDiagram(-1);
+            }
+            else {
+                if (CurrentOpacDiv) {
+                    $(CurrentOpacDiv).hide();
+                }
+                else {
+                    $("#zoomDiagramBG").hide();
+                }
+            }
+        }
+        zoomDiagramVisible = false;
+    }
+    else
+    {
+        if (CurrentOpacDiv) {
+            $(CurrentOpacDiv).show();
+        }
+        else {
+            $("#zoomDiagramBG").show();
+        }
+        if (zoomDiagramContSlide) {
+            if (zoomDiagramContWidth == null) {
+                zoomDiagramContWidth = $("#zoomDiagramCont").offsetWidth;
+                zoomDiagramContHeight = $("#zoomDiagramCont").offsetHeight;
+            }
+            $("#zoomDiagramCont").width(zoomDiagramContWidth.toString() + "px"); // Breite auf 0 setzen
+            $("#zoomDiagramCont").height("0px"); // Höhe auf 0 setzen
+            SlideZoomDiagram(1);
+        }
+        if (globalAnimateEffects) {
+            zoomDiagramFadeFactor = 0;
+            FadeZoomDiagram(1);
+        }
+        zoomDiagramVisible = true;
+    }
+}
+
+// todo completely replace with jquery .show(effect)
+function EndFadeZoomDiagram(status) {
+    if (CurrentOpacDiv) {
+        $(CurrentOpacDiv).css("filter", "");
+        $(CurrentOpacDiv).css("opacity", "");
+    }
+    else {
+        $("#zoomDiagramBG").css("filter", "");
+        $("#zoomDiagramBG").css("opacity", "");
+    }
+    if (status == -1) {
+        if (CurrentOpacDiv) {
+            $(CurrentOpacDiv).hide();
+        } else {
+            $("#zoomDiagramBG").hide();
+        }
+        $("#zoomDiagramCont").html("<img src=\"/Images/loading.gif\" width=\"62\" height=\"23\" alt=\"loading\" style=\"margin:100px 300px 100px 300px;\" />");
+        CurrentOpacDiv = OriginalOpacDiv;
+    }
+    require(['sma-tooltip'], function(tooltip) { tooltip.apply(); });
+}
+
+// todo completely replace with jquery .show(effect)
+function FadeZoomDiagram(status) {
+    var fadeIntervallTime = 20;
+    var fadeStepFactor = 10;
+    if (navigator.appVersion.indexOf("MSIE 6") >= 0)
+        fadeStepFactor = 100;
+	else if (navigator.appVersion.match(/iPad/i) || navigator.appVersion.match(/iPhone/i) || navigator.appVersion.match(/iPod/i))
+	    fadeStepFactor = 100;
+
+    zoomDiagramFadeFactor = zoomDiagramFadeFactor + (status * fadeStepFactor);
+    if (zoomDiagramFadeFactor <= 0) {
+        zoomDiagramFadeFactor = 0; // FadeFactor auf 0 setzen
+        EndFadeZoomDiagram(status);
+        return;
+    }
+    else if (zoomDiagramFadeFactor >= 100) {
+        zoomDiagramFadeFactor = 100; // FadeFactor auf Maximum setzen
+        EndFadeZoomDiagram(status);
+        return;
+    }
+    var tmpFadeFactorFilter = Math.round(zoomDiagramFadeFactor / 4 * 3); // den IE Filter nur auf die Hälfte setzen, da sonst auch das Hintergrund-png den Filter bekommt !!!
+    var tmpFadeFactorOpacity = zoomDiagramFadeFactor / 100;
+    if (CurrentOpacDiv) {
+        $(CurrentOpacDiv).css("filter", "alpha(opacity: " + tmpFadeFactorFilter.toString() + ")");
+        $(CurrentOpacDiv).css("opacity", tmpFadeFactorOpacity);
+    }
+    else {
+        $("#zoomDiagramBG").css("filter", "alpha(opacity: " + tmpFadeFactorFilter.toString() + ")");
+        $("#zoomDiagramBG").css("opacity", tmpFadeFactorOpacity);
+    }
+
+    setTimeout('FadeZoomDiagram(' + status + ')', fadeIntervallTime);
+}
+
+// todo completely replace with jquery .show(effect)
+function EndSlideZoomDiagram(status) {
+    if (status == -1) {
+        if (CurrentOpacDiv) {
+            $(CurrentOpacDiv).hide();
+        }
+        else {
+            $("#zoomDiagramBG").hide();
+        }
+        $("#zoomDiagramCont").html("<img src=\"/Images/loading.gif\" width=\"62\" height=\"23\" alt=\"loading\" style=\"margin:100px 300px 100px 300px;\" />");
+    }
+    require(['sma-tooltip'], function(tooltip) { tooltip.apply(); });
+}
+
+// todo completely replace with jquery .show(effect)
+function SlideZoomDiagram(status) {
+    var slideIntervallTime = 20;
+    var curDiv = $("#zoomDiagramCont");
+    var newHeight = 0;
+    var orgHeight = zoomDiagramContHeight; // Originalhöhe
+    if (curDiv.height.length > 0)
+        newHeight = parseInt(curDiv.style.height.substring(0, curDiv.style.height.indexOf('px'))); //Höhe ohne "px"
+    else
+        newHeight = orgHeight;
+    if (isNaN(newHeight))
+        return;
+    var slideStepHeight = 10 + Math.round(orgHeight / 20);
+
+    newHeight = newHeight + (status * slideStepHeight);
+    if (newHeight > 0) {
+        curDiv.show();
+        if (newHeight >= orgHeight)
+            newHeight = orgHeight; // Höhe auf Maximum setzen
+    }
+    else {
+        curDiv.height(0); // Höhe auf 0 setzen
+        curDiv.hide();
+        EndSlideZoomDiagram(status);
+        return;
+    }
+    curDiv.style.height = newHeight.toString() + "px"; // Step-Höhe setzen
+    if (newHeight >= orgHeight) {
+        EndSlideZoomDiagram(status);
+        return;
+    }
+    setTimeout('SlideZoomDiagram(' + status + ')', slideIntervallTime);
+}
+
+function ZoomDiagramOnlyLoading()
+{
+    $("#zoomDiagramCancel").hide();
+    $("#zoomDiagramCont").hide();
+    $("#zoomDiagramOnlyLoading").show();
+    ZoomDiagramShow();
+}
+-->
+</script>
+
+
+
+</div>
+
+</div>
+
+
+    <script type="text/javascript">
+        (function (global, name, factory) {
+            global.SMA = global.SMA || {};
+            global.SMA[name] = factory();
+        }(window || this, 'live', function () {
+            return {
+                isAuthorized: true,
+                isAvailable: false,
+                requestIntervalMs: 5000,
+                idleTimeoutMs: 3600000,
+                maxFailureCount: 10
+            };
+        }));
+    </script>
+
+<script type="text/javascript">
+    $(function () {
+        require(['dashboard-main'], function (main) {
+            main.init();
+        });
+    });
+
+    var endLive = $.now();
+
+    function UnClickCurrentButton() {
+        if (endLive <= $.now()) {
+            if ($('#timelineModeCurrentButton').parent().parent().hasClass('selected')) {
+                $("#timelineModeDayButton").parent().trigger("click");
+                $('#timelineModeCurrentButton').parent().parent().removeClass('timelineModeButtonHover dijitHover');
+            }
+        }
+        setTimeout(function () {
+            UnClickCurrentButton();
+        }, 100);
+    }
+
+    function HideCurrentButton(counter) {
+        if ($('#timelineModeCurrentButton').is(":visible")) {
+            $('#timelineModeCurrentButton').parent().parent().hide();
+        }
+        else if (counter < 10) {
+            setTimeout(function () {
+                HideCurrentButton(counter + 1);
+            }, 1);
+        }
+    }
+
+</script>
+
+		    <div style="clear:left;"></div>
+        </div>
+    </div>
+
+                                        <div id="MouseTitleDiv" style="position:absolute; top:0px; left:0px;z-index:10000;"></div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </table>
+
+                        <div id="statusbar">
+                            <span id="statusbarLoading">
+                                <img src="/Images/loading.gif" width="62" height="23" alt="Loading" />
+                            </span>
+                            <span id="statusbarDesc">
+
+© 2023 SMA Solar Technology AG
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a id="ctl00_HeaderNavigationMenuControl_HOME" href="javascript:__doPostBack(&#39;ctl00$HeaderNavigationMenuControl$HOME&#39;,&#39;&#39;)">Home</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a id="ctl00_HeaderNavigationMenuControl_INFO" href="javascript:__doPostBack(&#39;ctl00$HeaderNavigationMenuControl$INFO&#39;,&#39;&#39;)">Information</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a id="ctl00_HeaderNavigationMenuControl_MANUALS_HOMAN" href="javascript:__doPostBack(&#39;ctl00$HeaderNavigationMenuControl$MANUALS_HOMAN&#39;,&#39;&#39;)">User manuals</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <a id="ctl00_HeaderNavigationMenuControl_LinkFAQ" href="https://my.sma-service.com/" target="_blank">FAQ</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a id="ctl00_HeaderNavigationMenuControl_TERMS_AND_CONDITIONS" href="javascript:__doPostBack(&#39;ctl00$HeaderNavigationMenuControl$TERMS_AND_CONDITIONS&#39;,&#39;&#39;)">Terms of Use</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a id="ctl00_HeaderNavigationMenuControl_DATA_PROTECTION_DECLARATION" href="javascript:__doPostBack(&#39;ctl00$HeaderNavigationMenuControl$DATA_PROTECTION_DECLARATION&#39;,&#39;&#39;)">Data protection declaration</a>
+     &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a id="ctl00_HeaderNavigationMenuControl_CONTACT" href="javascript:__doPostBack(&#39;ctl00$HeaderNavigationMenuControl$CONTACT&#39;,&#39;&#39;)">Legal Notice</a>
+
+
+
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+<script type="text/javascript">
+<!--
+$("#TitleLeftMenuNode_0").attr("title", "José Manuel Corrales").html("José Manuel Corrales");
+-->
+</script><script type="text/javascript">
+<!--
+var closeButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = true;
+function ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On() {
+	closeButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = false;
+	if (globalAnimateEffects) {
+		$(gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ButtonsDiv")).animate({ width: "show", height: "show" }, "normal");
+	}
+	else {
+		gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ButtonsDiv").style.display = "";
+	}
+}
+function ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(mouseover) {
+	if (closeButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1) {
+		closeButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = false;
+		if (globalAnimateEffects) {
+			$(gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ButtonsDiv")).animate({ width: "hide", height: "hide" }, "normal");
+		}
+		else {
+			gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ButtonsDiv").style.display = "none";
+		}
+	}
+	else if (mouseover) {
+		closeButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = true;
+		setTimeout("ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(false)", 500);
+	}
+}
+if (navigator.appVersion.indexOf("MSIE 6") >= 0) {
+	gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_ButtonsDiv").style.display = "";
+	ButtonsDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(false);
+}
+var openNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = false;
+var closeNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = true;
+function NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On(mouseover) {
+	closeNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = false;
+	if (openNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1) {
+		openNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = false;
+		if (globalAnimateEffects) {
+			$(gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateLeftDiv")).animate({ width: "show" }, "normal");
+		}
+		else {
+			gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateLeftDiv").style.display = "";
+		}
+	}
+	else if (mouseover) {
+		openNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = true;
+		setTimeout("NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On(false)", 300);
+	}
+}
+function NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(mouseover) {
+	openNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = false;
+	if (closeNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1) {
+		closeNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = false;
+		if (globalAnimateEffects) {
+			$(gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateLeftDiv")).animate({ width: "hide" }, "normal");
+		}
+		else {
+			gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateLeftDiv").style.display = "none";
+		}
+	}
+	else if (mouseover) {
+		closeNavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1 = true;
+		setTimeout("NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(false)", 1);
+	}
+}
+if (navigator.appVersion.indexOf("MSIE 6") >= 0) {
+	gebi("ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_NavigateLeftDiv").style.display = "";
+	NavigateLeftDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(false);
+}
+function NavigateRightDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1On(mouseover) {}
+function NavigateRightDivctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1Off(mouseover) {}
+
+-->
+</script><script type="text/javascript">
+<!--
+function SetNavigateDivHidden(idDiv, value) {
+	var idHidden = idDiv.replace("NavigateLeftDiv", "NavigateDivHidden").replace("NavigateRightDiv", "NavigateDivHidden");
+	if (gebi(idHidden)) {
+		gebi(idHidden).value = value;
+		__doPostBack('ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_UserControlShowEnergyAndPower1_EnergyPowerDiv', null);
+	}
+}
+
+-->
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var SFX_fontNameArray = new Array(109);
+SFX_fontNameArray[0] = 'Arial';
+SFX_fontNameArray[1] = 'Arial Black';
+SFX_fontNameArray[2] = 'Bahnschrift';
+SFX_fontNameArray[3] = 'Bahnschrift Condensed';
+SFX_fontNameArray[4] = 'Bahnschrift Light';
+SFX_fontNameArray[5] = 'Bahnschrift Light Condensed';
+SFX_fontNameArray[6] = 'Bahnschrift Light SemiCondensed';
+SFX_fontNameArray[7] = 'Bahnschrift SemiBold';
+SFX_fontNameArray[8] = 'Bahnschrift SemiBold Condensed';
+SFX_fontNameArray[9] = 'Bahnschrift SemiBold SemiConden';
+SFX_fontNameArray[10] = 'Bahnschrift SemiCondensed';
+SFX_fontNameArray[11] = 'Bahnschrift SemiLight';
+SFX_fontNameArray[12] = 'Bahnschrift SemiLight Condensed';
+SFX_fontNameArray[13] = 'Bahnschrift SemiLight SemiConde';
+SFX_fontNameArray[14] = 'Calibri';
+SFX_fontNameArray[15] = 'Calibri Light';
+SFX_fontNameArray[16] = 'Cambria';
+SFX_fontNameArray[17] = 'Cambria Math';
+SFX_fontNameArray[18] = 'Candara';
+SFX_fontNameArray[19] = 'Candara Light';
+SFX_fontNameArray[20] = 'Comic Sans MS';
+SFX_fontNameArray[21] = 'Consolas';
+SFX_fontNameArray[22] = 'Constantia';
+SFX_fontNameArray[23] = 'Corbel';
+SFX_fontNameArray[24] = 'Corbel Light';
+SFX_fontNameArray[25] = 'Courier New';
+SFX_fontNameArray[26] = 'Dotum';
+SFX_fontNameArray[27] = 'DotumChe';
+SFX_fontNameArray[28] = 'Ebrima';
+SFX_fontNameArray[29] = 'Franklin Gothic Medium';
+SFX_fontNameArray[30] = 'Gabriola';
+SFX_fontNameArray[31] = 'Gadugi';
+SFX_fontNameArray[32] = 'Georgia';
+SFX_fontNameArray[33] = 'Gulim';
+SFX_fontNameArray[34] = 'GulimChe';
+SFX_fontNameArray[35] = 'Impact';
+SFX_fontNameArray[36] = 'Ink Free';
+SFX_fontNameArray[37] = 'Javanese Text';
+SFX_fontNameArray[38] = 'Leelawadee UI';
+SFX_fontNameArray[39] = 'Leelawadee UI Semilight';
+SFX_fontNameArray[40] = 'Lucida Console';
+SFX_fontNameArray[41] = 'Lucida Sans Unicode';
+SFX_fontNameArray[42] = 'Malgun Gothic';
+SFX_fontNameArray[43] = 'Malgun Gothic Semilight';
+SFX_fontNameArray[44] = 'Marlett';
+SFX_fontNameArray[45] = 'Microsoft Himalaya';
+SFX_fontNameArray[46] = 'Microsoft JhengHei';
+SFX_fontNameArray[47] = 'Microsoft JhengHei Light';
+SFX_fontNameArray[48] = 'Microsoft JhengHei UI';
+SFX_fontNameArray[49] = 'Microsoft JhengHei UI Light';
+SFX_fontNameArray[50] = 'Microsoft New Tai Lue';
+SFX_fontNameArray[51] = 'Microsoft PhagsPa';
+SFX_fontNameArray[52] = 'Microsoft Sans Serif';
+SFX_fontNameArray[53] = 'Microsoft Tai Le';
+SFX_fontNameArray[54] = 'Microsoft YaHei';
+SFX_fontNameArray[55] = 'Microsoft YaHei Light';
+SFX_fontNameArray[56] = 'Microsoft YaHei UI';
+SFX_fontNameArray[57] = 'Microsoft YaHei UI Light';
+SFX_fontNameArray[58] = 'Microsoft Yi Baiti';
+SFX_fontNameArray[59] = 'MingLiU';
+SFX_fontNameArray[60] = 'MingLiU-ExtB';
+SFX_fontNameArray[61] = 'MingLiU_HKSCS';
+SFX_fontNameArray[62] = 'MingLiU_HKSCS-ExtB';
+SFX_fontNameArray[63] = 'Mongolian Baiti';
+SFX_fontNameArray[64] = 'MS Gothic';
+SFX_fontNameArray[65] = 'MS PGothic';
+SFX_fontNameArray[66] = 'MS UI Gothic';
+SFX_fontNameArray[67] = 'MV Boli';
+SFX_fontNameArray[68] = 'Myanmar Text';
+SFX_fontNameArray[69] = 'Nirmala UI';
+SFX_fontNameArray[70] = 'Nirmala UI Semilight';
+SFX_fontNameArray[71] = 'NSimSun';
+SFX_fontNameArray[72] = 'Palatino Linotype';
+SFX_fontNameArray[73] = 'PMingLiU';
+SFX_fontNameArray[74] = 'PMingLiU-ExtB';
+SFX_fontNameArray[75] = 'Segoe MDL2 Assets';
+SFX_fontNameArray[76] = 'Segoe Print';
+SFX_fontNameArray[77] = 'Segoe Script';
+SFX_fontNameArray[78] = 'Segoe UI';
+SFX_fontNameArray[79] = 'Segoe UI Black';
+SFX_fontNameArray[80] = 'Segoe UI Emoji';
+SFX_fontNameArray[81] = 'Segoe UI Historic';
+SFX_fontNameArray[82] = 'Segoe UI Light';
+SFX_fontNameArray[83] = 'Segoe UI Semibold';
+SFX_fontNameArray[84] = 'Segoe UI Semilight';
+SFX_fontNameArray[85] = 'Segoe UI Symbol';
+SFX_fontNameArray[86] = 'SimSun';
+SFX_fontNameArray[87] = 'SimSun-ExtB';
+SFX_fontNameArray[88] = 'Sitka Banner';
+SFX_fontNameArray[89] = 'Sitka Display';
+SFX_fontNameArray[90] = 'Sitka Heading';
+SFX_fontNameArray[91] = 'Sitka Small';
+SFX_fontNameArray[92] = 'Sitka Subheading';
+SFX_fontNameArray[93] = 'Sitka Text';
+SFX_fontNameArray[94] = 'Sylfaen';
+SFX_fontNameArray[95] = 'Symbol';
+SFX_fontNameArray[96] = 'Tahoma';
+SFX_fontNameArray[97] = 'Times New Roman';
+SFX_fontNameArray[98] = 'Trebuchet MS';
+SFX_fontNameArray[99] = 'Verdana';
+SFX_fontNameArray[100] = 'Webdings';
+SFX_fontNameArray[101] = 'Wingdings';
+SFX_fontNameArray[102] = 'Yu Gothic';
+SFX_fontNameArray[103] = 'Yu Gothic Light';
+SFX_fontNameArray[104] = 'Yu Gothic Medium';
+SFX_fontNameArray[105] = 'Yu Gothic UI';
+SFX_fontNameArray[106] = 'Yu Gothic UI Light';
+SFX_fontNameArray[107] = 'Yu Gothic UI Semibold';
+SFX_fontNameArray[108] = 'Yu Gothic UI Semilight';
+var SFX_fontDialog='/WebResource.axd?d=4aFmQjwexKf1d7DYbf_QJyYx6eZKgl2W-VGMhBtPLr6otuMZW-lkJpOCtdKF1z4uJZUQTpqH8-y62KwIsvXE91_nURnr7XqzzF97jrtaE6j8mA350&t=638118827140000000';
+//]]>
+</script>
+<script type="text/javascript"><!--
+var basicDatePicker = (window.BasicDatePicker) ? new BasicDatePicker() : "NoJS"; function basicDatePickerButtonElementClick(b, v, l, params, stayOpen) { if(basicDatePicker == "NoJS") { alert("Unable to find the required BasicDatePicker JavaScript Library."); } else if(basicDatePicker) { basicDatePicker.stayOpen = stayOpen; basicDatePicker.showPopUp(b, v, l, params); }};
+//--></script></form>
+
+        <noscript>
+            <table id="ShadowBox_PasswordErrorBox" class="ShadowBoxOuterFrame layoutTable" style="z-index: 9999">
+                <tr>
+                    <td valign="middle" align="center">
+                        <table class="ShadowBoxInnerFrame layoutTable">
+                            <tr>
+                                <td class="ShadowBoxCloseButtonRow" colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td class="ShadowBoxTopLeft"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img1" width="0" height="0" /></td>
+                                <td class="ShadowBoxTop"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img2" width="0" height="0" /></td>
+                                <td class="ShadowBoxTopRight"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img3" width="0" height="0" /></td></tr>
+                            <tr>
+                                <td class="ShadowBoxLeft"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img4" width="0" height="0" /></td>
+                                <td class="ShadowBoxContent">
+                                    <div id="JavascriptErrorBox" class="hasGrid" style="text-align:left; width:500px; margin-right:0px;">
+                                        <strong>Your Browser does not support JavaScript!</strong><br />
+                                        JavaScript is required to use Sunny Portal. Enable JavaScript in your browsersettings and reload this Website to try again.<br /><br />
+                                        <strong>Ihr Internetbrowser unterstützt JavaScript nicht!</strong><br/>
+                                        JavaScript wird für die Verwendung von Sunny Portal benötigt. Aktivieren Sie JavaScript in den Einstellungen Ihres Internetbrowsers und aktualisieren Sie die Ansicht dieser Internetseite.
+                                    </div>
+                                </td>
+                                <td class="ShadowBoxRight"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img5" width="0" height="0" /></td>
+                            </tr>
+                            <tr>
+                                <td class="ShadowBoxBottomLeft"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img6" width="0" height="0" /></td>
+                                <td class="ShadowBoxBottom"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img7" width="0" height="0" /></td>
+                                <td class="ShadowBoxBottomRight"><img src="../Tools/images/shadowbox/spacer.gif" id="ctl00_Img8" width="0" height="0" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </noscript>
+
+
+
+
+    </body>
+</html>

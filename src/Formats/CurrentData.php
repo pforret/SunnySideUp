@@ -4,11 +4,7 @@ namespace Pforret\SunnySideUp\Formats;
 
 class CurrentData
 {
-    public float $currentPowerKw;
+    public ?float $currentPowerKw = null;
 
-    public float $currentTemperature;
-
-    public float $currentPrecipitation;
-
-    public string $timeSampled;
+    public ?string $timeSampled = null;
 }
