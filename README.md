@@ -37,9 +37,9 @@ $response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/
 {
     "stationData": {
         "url": "https:\/\/region04eu5.fusionsolar.huawei.com\/rest\/pvms\/web\/kiosk\/v1\/station-kiosk-file?kk=fo0x7vgtd9Noeqj9FHx2ofD0fPvAyj9b",
-        "name": "Forret",
-        "id": "NE=35479375",
-        "address": "Populierendallaan 3, 1850 Grimbergen, Belgium",
+        "name": "(station name)",
+        "id": "(station ID)",
+        "address": "(station address)",
         "city": null,
         "country": null,
         "timezone": null,
