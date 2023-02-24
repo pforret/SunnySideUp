@@ -86,7 +86,7 @@ $response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/
 ```
 
 ### SMA/SunnyPortal.com URL
-* Example URL: [www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=3e371bac-b19a-4257-853c-aac4d3601c0b&plant=46e9985f-128a-4da8-a70d-e95f72085ca4&splang=en-US](https://www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=3e371bac-b19a-4257-853c-aac4d3601c0b&plant=46e9985f-128a-4da8-a70d-e95f72085ca4&splang=en-US)
+* Example URL: [www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=(pageID)&plant=(plantID)&splang=en-US](https://www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=3e371bac-b19a-4257-853c-aac4d3601c0b&plant=46e9985f-128a-4da8-a70d-e95f72085ca4&splang=en-US)
 * data:
 ```json
 {
