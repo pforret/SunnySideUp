@@ -30,7 +30,7 @@ class SunnySideUpClass
             default => null,
         };
         if (! $source) {
-            throw new UnknownSiteError();
+            throw new UnknownSiteError("No information provider for domain [$domain]");
         }
 
         return $source->get($url);
