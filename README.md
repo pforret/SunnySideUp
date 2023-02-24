@@ -1,4 +1,4 @@
-# solar monitoring site data retrieval
+# Solar monitoring site data retrieval
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/pforret/sunnysideup.svg?style=flat-square)](https://packagist.org/packages/pforret/sunnysideup)
 [![Tests](https://img.shields.io/github/actions/workflow/status/pforret/sunnysideup/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/pforret/sunnysideup/actions/workflows/run-tests.yml)

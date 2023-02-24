@@ -51,7 +51,7 @@ class SunnyPortalSourceTest extends TestCase
     {
         $url = 'https://www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=3e371bac-b19a-4257-853c-aac4d3601c0b&plant=46e9985f-128a-4da8-a70d-e95f72085ca4&splang=en-US';
         $response = (new SunnyPortalSource())->get($url);
-        print_r(json_encode($response));
+        //print_r(json_encode($response));
         $this->assertNotEmpty($response->stationData, 'StationData not empty');
         $this->assertNotEmpty($response->dayProduction->kwhSystem, 'Daily Production not empty');
     }
