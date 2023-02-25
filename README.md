@@ -22,13 +22,15 @@ composer require pforret/sunnysideup
 ## Usage
 
 ```php
-$sunny = new SunnySideUpClass();
+$sunny = new SunnySideUp();
 $response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html#/kiosk?kk=$id");
 ```
 
 ## Retrieved data
 
 ### Huawei/FusionSolar Kiosk URL
+
+![](assets/fusionsolar_kiosk.png)
 
 * Example URL: [region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html#/kiosk?kk=(unique ID)](https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html#/kiosk?kk=fo0x7vgtd9Noeqj9FHx2ofD0fPvAyj9b)
 * Data:
@@ -86,6 +88,8 @@ $response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/
 ```
 
 ### SMA/SunnyPortal.com URL
+
+![](assets/sunnyportal_public.png)
 * Example URL: [www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=(pageID)&plant=(plantID)&splang=en-US](https://www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=3e371bac-b19a-4257-853c-aac4d3601c0b&plant=46e9985f-128a-4da8-a70d-e95f72085ca4&splang=en-US)
 * data:
 ```json
