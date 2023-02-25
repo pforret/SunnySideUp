@@ -111,9 +111,15 @@ class FusionSolarSource implements SourceInterface
 
         $response->yearProduction = new ProductionData();
         $response->yearProduction->kwhSystem = $data['realKpi']['yearEnergy'] ?? null;
+        $response->yearProduction->equivalentKgCo2 = $data['socialContribution']['co2ReductionByYear'] ?? null;
+        $response->yearProduction->equivalentTrees = $data['socialContribution']['equivalentTreePlantingByYear'] ?? null;
+        $response->yearProduction->equivalentKgCoal = $data['socialContribution']['standardCoalSavingsByYear'] ?? null;
 
         $response->totalProduction = new ProductionData();
         $response->totalProduction->kwhSystem = $data['realKpi']['cumulativeEnergy'] ?? null;
+        $response->totalProduction->equivalentKgCo2 = $data['socialContribution']['co2Reduction'] ?? null;
+        $response->totalProduction->equivalentTrees = $data['socialContribution']['equivalentTreePlanting'] ?? null;
+        $response->totalProduction->equivalentKgCoal = $data['socialContribution']['standardCoalSavings'] ?? null;
 
         return $response;
     }

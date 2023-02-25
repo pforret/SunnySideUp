@@ -11,7 +11,7 @@ use Pforret\SunnySideUp\Sources\FusionSolarSource;
 use Pforret\SunnySideUp\Sources\SourceInterface;
 use Pforret\SunnySideUp\Sources\SunnyPortalSource;
 
-class SunnySideUpClass
+class SunnySideUp
 {
     private SourceInterface $source;
 
