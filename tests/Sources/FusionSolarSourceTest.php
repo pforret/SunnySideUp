@@ -18,7 +18,7 @@ class FusionSolarSourceTest extends TestCase
         $url = 'https://region04eu5.fusionsolar.huawei.com/pvmswebsite/nologin/assets/build/index.html#/kiosk?kk=fo0x7vgtd9Noeqj9FHx2ofD0fPvAyj9b';
         $sunny = new FusionSolarSource();
         $response = $sunny->get($url);
-        //print_r(json_encode($response));
+        //print(json_encode($response));
 
         $this->assertNotEmpty($response->stationData->name);
     }

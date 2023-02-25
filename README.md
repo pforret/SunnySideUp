@@ -38,10 +38,10 @@ $response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/
 ```json
 {
     "stationData": {
-        "url": "https:\/\/region04eu5.fusionsolar.huawei.com\/rest\/pvms\/web\/kiosk\/v1\/station-kiosk-file?kk=fo0x7vgtd9Noeqj9FHx2ofD0fPvAyj9b",
-        "name": "(station name)",
-        "id": "(station ID)",
-        "address": "(station address)",
+        "url": "https:\/\/region04eu5.fusionsolar.huawei.com\/rest\/pvms\/web\/kiosk\/v1\/station-kiosk-file?kk=(key)",
+        "name": "(name)",
+        "id": "(id)",
+        "address": "(address)",
         "city": null,
         "country": null,
         "timezone": null,
@@ -57,32 +57,32 @@ $response = $sunny::get("https://region04eu5.fusionsolar.huawei.com/pvmswebsite/
         "currentPrecipitation": null
     },
     "currentData": {
-        "currentPowerKw": 0.47,
+        "currentPowerKw": 0.64,
         "timeSampled": null
     },
     "dayProduction": {
-        "kwhSystem": 1.63,
+        "kwhSystem": 8.72,
         "equivalentTrees": null,
         "equivalentKgCoal": null,
         "equivalentKgCo2": null
     },
     "monthProduction": {
-        "kwhSystem": 86.97,
+        "kwhSystem": 98.2,
         "equivalentTrees": null,
         "equivalentKgCoal": null,
         "equivalentKgCo2": null
     },
     "yearProduction": {
-        "kwhSystem": 118.23,
-        "equivalentTrees": null,
-        "equivalentKgCoal": null,
-        "equivalentKgCo2": null
+        "kwhSystem": 129.46,
+        "equivalentTrees": 1,
+        "equivalentKgCoal": 51.78,
+        "equivalentKgCo2": 61.49
     },
     "totalProduction": {
-        "kwhSystem": 173.61,
-        "equivalentTrees": null,
-        "equivalentKgCoal": null,
-        "equivalentKgCo2": null
+        "kwhSystem": 184.84,
+        "equivalentTrees": 1,
+        "equivalentKgCoal": 73.94,
+        "equivalentKgCo2": 87.8
     }
 }
 ```
