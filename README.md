@@ -8,7 +8,7 @@
 
 works for
 * [x] FusionSolar (Huawei) - Kiosk URL
-* [x] SunnyPortal (SMA Solar)
+* [x] SunnyPortal (SMA Solar) - PV System Overview URL
 * [ ] ...
 
 ## Installation
