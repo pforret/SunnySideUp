@@ -54,7 +54,7 @@ class SunnyPortalSourceTest extends TestCase
         //print_r(json_encode($response));
         $this->assertNotEmpty($response->stationData, 'StationData not empty');
         $this->assertNotEmpty($response->dayProduction->kwhSystem, 'Daily Production not empty');
-        $this->assertEquals(0,$response->stationData->watt_peak);
+        $this->assertEquals(1800,$response->stationData->watt_peak);
     }
 
     public function testGet2()
@@ -64,6 +64,6 @@ class SunnyPortalSourceTest extends TestCase
         //print_r(json_encode($response));
         $this->assertNotEmpty($response->stationData, 'StationData not empty');
         $this->assertNotEmpty($response->dayProduction->kwhSystem, 'Daily Production not empty');
-        $this->assertEquals(0,$response->stationData->watt_peak);
+        $this->assertEquals(4200,$response->stationData->watt_peak);
     }
 }
