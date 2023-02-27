@@ -66,4 +66,16 @@ class SunnyPortalSourceTest extends TestCase
         $this->assertNotEmpty($response->dayProduction->kwhSystem, 'Daily Production not empty');
         $this->assertEquals(4200, $response->stationData->watt_peak);
     }
+
+    public function testGetKwh()
+    {
+        $url = 'https://www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=2ade58a5-7f70-413c-8cc2-1af7e841b4c0&plant=5c2312a8-2138-4466-941d-1fa07866f1f3&splang=en-US';
+        $response = (new SunnyPortalSource())->get($url);
+        //print_r(json_encode($response));
+        $this->assertNotEmpty($response->stationData, 'StationData not empty');
+        $this->assertNotEmpty($response->dayProduction->kwhSystem, 'Daily Production not empty');
+        $this->assertEquals(10300, $response->stationData->watt_peak);
+    }
+
+
 }

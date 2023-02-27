@@ -32,7 +32,15 @@ class SunnyPortalSource implements SourceInterface
         $response->stationData = new StationData();
         $response->stationData->url = $url;
         $response->stationData->timezone = self::parseRegexFromHtml($html, "|standardName: '([^']+)'|");
-        $response->stationData->watt_peak = self::parseRegexFromHtml($html, "|<div><strong>(\d+) Wp</strong></div>|");
+        $kilo_watt_peak = self::parseRegexFromHtml($html, "|<div><strong>([\d\.]+) kWp</strong></div>|");
+        //             <div><strong>10.30 kWp</strong></div>
+        $watt_peak = self::parseRegexFromHtml($html, "|<div><strong>(\d+) Wp</strong></div>|");
+
+        if($watt_peak){
+            $response->stationData->watt_peak = $watt_peak;
+        } elseif($kilo_watt_peak){
+            $response->stationData->watt_peak = (int)($kilo_watt_peak * 1000);
+        }
         $response->stationData->date_commissioning = self::parseRegexFromHtml($html, "|<div><strong>(\d+/\d/\d+)</strong></div>|");
         $response->stationData->name = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_title');
         $response->stationData->name = str_replace('PV System Overview', '', $response->stationData->name);
