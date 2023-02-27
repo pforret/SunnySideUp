@@ -76,6 +76,4 @@ class SunnyPortalSourceTest extends TestCase
         $this->assertNotEmpty($response->dayProduction->kwhSystem, 'Daily Production not empty');
         $this->assertEquals(10300, $response->stationData->watt_peak);
     }
-
-
 }

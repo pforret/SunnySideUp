@@ -36,10 +36,10 @@ class SunnyPortalSource implements SourceInterface
         //             <div><strong>10.30 kWp</strong></div>
         $watt_peak = self::parseRegexFromHtml($html, "|<div><strong>(\d+) Wp</strong></div>|");
 
-        if($watt_peak){
+        if ($watt_peak) {
             $response->stationData->watt_peak = $watt_peak;
-        } elseif($kilo_watt_peak){
-            $response->stationData->watt_peak = (int)($kilo_watt_peak * 1000);
+        } elseif ($kilo_watt_peak) {
+            $response->stationData->watt_peak = (int) ($kilo_watt_peak * 1000);
         }
         $response->stationData->date_commissioning = self::parseRegexFromHtml($html, "|<div><strong>(\d+/\d/\d+)</strong></div>|");
         $response->stationData->name = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_title');
