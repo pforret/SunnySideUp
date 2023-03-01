@@ -76,4 +76,16 @@ class SunnyPortalSourceTest extends TestCase
         $this->assertNotEmpty($response->dayProduction->kwhSystem, 'Daily Production not empty');
         $this->assertEquals(10300, $response->stationData->watt_peak);
     }
+
+    public function testMonthlyPage()
+    {
+        $url = 'https://www.sunnyportal.com/Templates/PublicPageOverview.aspx?page=e051996e-c81f-4daa-ae41-1ff19e6b6dac&plant=cb1a4626-1b16-4bef-90cb-fd86879be288&splang=en-US';
+        $response = (new SunnyPortalSource())->get($url);
+        //print(json_encode($response, JSON_PRETTY_PRINT));
+        $this->assertEquals($response->stationData->name, 'sarojini');
+        $this->assertEmpty($response->dayProduction->kwhSystem, 'Daily Production empty');
+        $this->assertNotEmpty($response->monthProduction->kwhSystem, 'Monthly Production not empty');
+        $this->assertEmpty($response->yearProduction->kwhSystem, 'Yearly Production empty');
+        $this->assertEquals(5200, $response->stationData->watt_peak);
+    }
 }

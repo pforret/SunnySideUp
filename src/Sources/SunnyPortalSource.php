@@ -7,6 +7,7 @@ use Pforret\SunnySideUp\Formats\DayWeather;
 use Pforret\SunnySideUp\Formats\ProductionData;
 use Pforret\SunnySideUp\Formats\ProductionResponse;
 use Pforret\SunnySideUp\Formats\StationData;
+use Pforret\SunnySideUp\Helpers\StringCleaner;
 use Pforret\SunnySideUp\Helpers\UrlGrabber;
 
 class SunnyPortalSource implements SourceInterface
@@ -42,8 +43,7 @@ class SunnyPortalSource implements SourceInterface
             $response->stationData->watt_peak = (int) ($kilo_watt_peak * 1000);
         }
         $response->stationData->date_commissioning = self::parseRegexFromHtml($html, "|<div><strong>(\d+/\d/\d+)</strong></div>|");
-        $response->stationData->name = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_title');
-        $response->stationData->name = str_replace('PV System Overview', '', $response->stationData->name);
+        $response->stationData->name = StringCleaner::name(self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_title'));
 
         $response->currentData = new CurrentData();
         $response->currentData->currentPowerKw = (float) self::parseRegexFromHtml($html, '|data-value="(\d+)"|');
@@ -52,34 +52,45 @@ class SunnyPortalSource implements SourceInterface
         $response->dayWeather = new DayWeather();
 
         $response->dayProduction = new ProductionData();
-        $response->dayProduction->kwhSystem = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldValue');
-        $unit = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldUnit');
-        if ($unit == 'Wh' && $response->dayProduction->kwhSystem > 0) {
-            // convert to kWh
-            $response->dayProduction->kwhSystem = $response->dayProduction->kwhSystem / 1000;
-        }
+        $response->monthProduction = new ProductionData();
+        $response->yearProduction = new ProductionData();
+        $response->totalProduction = new ProductionData();
+
         $dailyCO2 = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionValue');
         $co2_unit = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_carbonWidget_carbonReductionUnit');
         if ($dailyCO2 > 0) {
             if ($co2_unit == 'g') {
                 // convert to kg
-                $response->dayProduction->equivalentKgCo2 = $dailyCO2 / 1000;
-            } else {
-                $response->dayProduction->equivalentKgCo2 = $dailyCO2;
+                $dailyCO2 = $dailyCO2 / 1000;
             }
         }
 
-        $response->monthProduction = new ProductionData();
-//        $response->monthProduction->kwhSystem = $data['realKpi']['monthEnergy'] ?? null;
-//
-        $response->yearProduction = new ProductionData();
-//        $response->yearProduction->kwhSystem = $data['realKpi']['yearEnergy'] ?? null;
+        $productionValue = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldValue');
+        $productionUnit = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldUnit');
+        if ($productionUnit == 'Wh') {
+            $productionValue = $productionValue / 1000;
+        }
 
-        $response->totalProduction = new ProductionData();
+        $title = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldPeriodTitle');
+        switch (StringCleaner::text($title)) {
+            case 'Today':
+                $response->dayProduction->kwhSystem = $productionValue;
+                $response->dayProduction->equivalentKgCo2 = $dailyCO2;
+                break;
+
+            case date('Y'):
+                $response->yearProduction->kwhSystem = $productionValue;
+                $response->yearProduction->equivalentKgCo2 = $dailyCO2;
+                break;
+
+            default:
+                $response->monthProduction->kwhSystem = $productionValue;
+                $response->monthProduction->equivalentKgCo2 = $dailyCO2;
+        }
+
         $response->totalProduction->kwhSystem = self::parseFloatViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldTotalValue');
         $unit = self::parseTextViaId($html, 'ctl00_ContentPlaceHolder1_PublicPagePlaceholder_PageUserControl_ctl00_PublicPageLoadFixPage_energyYieldWidget_energyYieldTotalUnit');
         if ($unit == 'MWh' && $response->totalProduction->kwhSystem > 0) {
-            // convert to kWh
             $response->totalProduction->kwhSystem = $response->totalProduction->kwhSystem * 1000;
         }
 
