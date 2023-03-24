@@ -101,7 +101,7 @@ class FusionSolarSource implements SourceInterface
         $response->dayWeather = new DayWeather();
 
         $response->currentData = new CurrentData();
-        $response->currentData->currentPowerKw = $data['powerCurve']['currentPower'] ?? '';
+        $response->currentData->currentPowerKw = (float) ($data['powerCurve']['currentPower'] ?? 0);
 
         $response->dayProduction = new ProductionData();
         $response->dayProduction->kwhSystem = $data['realKpi']['dailyEnergy'] ?? null;
